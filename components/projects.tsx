@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import darubiniImg from "../src/darubini.jpg"
+import universeImg from "../src/universe.jpg"
 
 export default function Projects() {
   const projects = [
@@ -14,7 +16,7 @@ export default function Projects() {
       title: "Darubini ya Afya",
       description:
         "A comprehensive health platform for community wellness in Kenya, enhancing community health through digital solutions and health information access.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: darubiniImg,
       tags: ["React", "Node.js", "MongoDB", "Express", "Health Tech"],
       liveLink: "https://darubini-improved.vercel.app/",
       githubLink: "#",
@@ -23,7 +25,7 @@ export default function Projects() {
       title: "Universe Social Media",
       description:
         "The ultimate social platform designed exclusively for university students to connect, explore, and thrive. Build networks, join communities, and discover opportunities.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: universeImg,
       tags: ["React", "Node.js", "Socket.io", "MongoDB", "Social Platform"],
       liveLink: "https://v0-university-frontend-development.vercel.app/",
       githubLink: "#",
@@ -33,14 +35,6 @@ export default function Projects() {
       description: "Online store for watches, shades, and candles with a modern UI and seamless checkout experience.",
       image: "/placeholder.svg?height=400&width=600",
       tags: ["React", "Firebase", "Stripe", "Tailwind CSS"],
-      liveLink: "#",
-      githubLink: "#",
-    },
-    {
-      title: "mMovin' Logistics",
-      description: "Website for a relocation/moving service with booking system and real-time tracking.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["React", "Express", "MySQL", "Google Maps API"],
       liveLink: "#",
       githubLink: "#",
     },

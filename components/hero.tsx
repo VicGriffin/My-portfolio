@@ -108,7 +108,7 @@ export default function Hero() {
                   src="/images/victor-profile.jpg"
                   alt="Victor Kamau"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-full"
                   priority
                 />
               </motion.div>
