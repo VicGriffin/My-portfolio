@@ -16,7 +16,7 @@ export default function Projects() {
         "A comprehensive health platform for community wellness in Kenya, enhancing community health through digital solutions and health information access.",
       image: "/placeholder.svg?height=400&width=600",
       tags: ["React", "Node.js", "MongoDB", "Express", "Health Tech"],
-      liveLink: "https://darubini1.vercel.app/",
+      liveLink: "https://darubini-improved.vercel.app/",
       githubLink: "#",
     },
     {

@@ -1,9 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, MapPin, Phone, User } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Hero() {
   return (
@@ -76,7 +77,7 @@ export default function Hero() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://linkedin.com/in/victor-muthui-9351b3355" target="_blank" rel="noopener noreferrer">
+            <Link href="www.linkedin.com/in/victor-kamau-987951392" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="rounded-full bg-transparent">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
@@ -101,9 +102,15 @@ export default function Hero() {
               <motion.div
                 animate={{ scale: [0.95, 1.05, 0.95] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                className="text-primary/50"
+                className="relative w-full h-full"
               >
-                <User size={120} />
+                <Image
+                  src="/images/victor-profile.jpg"
+                  alt="Victor Kamau"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </motion.div>
             </div>
           </div>
