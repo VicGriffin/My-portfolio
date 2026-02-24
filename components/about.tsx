@@ -125,7 +125,7 @@ export default function About() {
                 
                 <div className="space-y-4">
                   <div className="text-center p-4 rounded-lg bg-primary/5 border border-primary/10">
-                    <div className="text-3xl font-bold text-primary mb-1">5+</div>
+                    <div className="text-3xl font-bold text-primary mb-1">3+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
                   
