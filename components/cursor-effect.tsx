@@ -39,47 +39,19 @@ export default function CursorEffect() {
 
   return (
     <>
-      {/* Custom cursor */}
+      {/* Simple pointer cursor */}
       <motion.div
         ref={cursorRef}
         className="fixed top-0 left-0 w-4 h-4 rounded-full bg-primary pointer-events-none z-50 mix-blend-difference"
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
-          scale: isHovering ? 2 : 1,
+          scale: isHovering ? 1.5 : 1,
         }}
         transition={{
           type: "spring",
           stiffness: 500,
           damping: 28,
-        }}
-      />
-      
-      {/* Cursor trail */}
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-primary/30 pointer-events-none z-40"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
-        }}
-      />
-      
-      {/* Glow effect */}
-      <motion.div
-        className="fixed top-0 left-0 w-32 h-32 rounded-full bg-primary/5 pointer-events-none z-30"
-        animate={{
-          x: mousePosition.x - 64,
-          y: mousePosition.y - 64,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 15,
         }}
       />
     </>

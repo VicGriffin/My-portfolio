@@ -20,6 +20,7 @@ export default function Contact() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -30,21 +31,39 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const { sendEmail } = await import("@/lib/email")
+      const result = await sendEmail(formData)
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    })
+      if (result.success) {
+        toast({
+          title: "🎉 Message Sent Successfully!",
+          description: "Thank you for reaching out! I'll review your message and get back to you within 24 hours.",
+        })
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-    setIsSubmitting(false)
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+        setShowConfirmation(true)
+      } else {
+        toast({
+          title: "❌ Failed to Send Message",
+          description: "Please try again or email me directly at vickamau20@gmail.com",
+          variant: "destructive"
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "⚠️ Something Went Wrong",
+        description: "Please try again later or contact me directly at vickamau20@gmail.com",
+        variant: "destructive"
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -240,6 +259,38 @@ export default function Contact() {
                     )}
                   </Button>
                 </form>
+
+                {/* Confirmation Message */}
+                {showConfirmation && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-6 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+                  >
+                    <div className="text-center">
+                      <div className="text-4xl mb-4">🎉</div>
+                      <h3 className="text-lg font-semibold text-green-800 dark:text-green-200 mb-2">
+                        Message Sent Successfully!
+                      </h3>
+                      <p className="text-green-700 dark:text-green-300 mb-4">
+                        Thank you for reaching out! I've received your message and will get back to you within 24 hours.
+                      </p>
+                      <div className="flex items-center justify-center gap-2 text-sm text-green-600 dark:text-green-400">
+                        <Mail size={16} />
+                        <span>vickamau20@gmail.com</span>
+                      </div>
+                      <Button
+                        onClick={() => setShowConfirmation(false)}
+                        variant="outline"
+                        size="sm"
+                        className="mt-4"
+                      >
+                        Send Another Message
+                      </Button>
+                    </div>
+                  </motion.div>
+                )}
               </CardContent>
             </Card>
           </motion.div>
