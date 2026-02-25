@@ -18,8 +18,8 @@ export const sendEmail = async (formData: {
       serviceId,
       templateId,
       {
-        from_name: formData.name,
-        from_email: formData.email,
+        name: formData.name,
+        email: formData.email,
         subject: formData.subject,
         message: formData.message,
         to_email: 'vickamau20@gmail.com'
