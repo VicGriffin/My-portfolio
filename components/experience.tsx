@@ -16,8 +16,8 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-2">Work Experience</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl font-serif font-bold mb-2">Work Experience</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-8">
@@ -27,11 +27,11 @@ export default function Experience() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="mb-8 border-l-4 border-l-primary">
+            <Card className="mb-8 border-l-4 border-l-primary glass-effect border-border/50 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 font-serif">
                       <Briefcase className="h-5 w-5 text-primary" />
                       Software Developer Intern
                     </CardTitle>
@@ -60,11 +60,11 @@ export default function Experience() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="border-l-4 border-l-primary">
+            <Card className="border-l-4 border-l-primary glass-effect border-border/50 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 font-serif">
                       <Briefcase className="h-5 w-5 text-primary" />
                       Data Science
                     </CardTitle>

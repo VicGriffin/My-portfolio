@@ -11,10 +11,10 @@ export default function Hero() {
     <section id="home" className="min-h-screen flex items-center pt-16 pb-12 px-4 relative overflow-hidden">
       {/* Animated background gradients */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 hero-gradient opacity-10 animate-gradient"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "6s" }}></div>
+        <div className="absolute inset-0 hero-gradient opacity-5 animate-gradient"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/15 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "6s" }}></div>
       </div>
 
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -39,7 +39,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-5xl md:text-7xl font-bold leading-tight"
+              className="text-5xl md:text-7xl font-serif font-bold leading-tight tracking-tight"
             >
               <span className="gradient-text">Victor Kamau</span>
             </motion.h1>
@@ -130,17 +130,17 @@ export default function Hero() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-2 border-primary/20"
+              className="absolute inset-0 rounded-full border border-primary/40"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              className="absolute inset-4 rounded-full border-2 border-purple-500/20"
+              className="absolute inset-4 rounded-full border border-primary/25"
             />
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              className="absolute inset-8 rounded-full border-2 border-pink-500/20"
+              className="absolute inset-8 rounded-full border border-primary/15"
             />
             
             {/* Central profile image with glass effect */}
@@ -165,16 +165,16 @@ export default function Hero() {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-              className="absolute -top-4 -right-4 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold shadow-lg"
+              className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-semibold shadow-xl hover:shadow-2xl transition-shadow"
             >
-              3+ Years
+              3+ Years Exp.
             </motion.div>
             <motion.div
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
-              className="absolute -bottom-4 -left-4 px-3 py-1 rounded-full bg-purple-600 text-white text-xs font-semibold shadow-lg"
+              className="absolute -bottom-4 -left-4 px-4 py-2 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold shadow-xl hover:shadow-2xl transition-shadow"
             >
-              Full Stack
+              Full Stack Dev
             </motion.div>
           </div>
         </motion.div>

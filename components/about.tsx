@@ -10,8 +10,8 @@ export default function About() {
     <section id="about" className="py-20 px-4 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/8 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-amber-600/8 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -33,10 +33,10 @@ export default function About() {
             <span className="text-primary font-medium">Get to know me</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -57,10 +57,10 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    <div className="flex items-start gap-3">
+                      <div className="flex items-start gap-3">
                       <Code className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">Technical Excellence</h3>
+                        <h3 className="text-xl font-serif font-semibold mb-2">Technical Excellence</h3>
                         <p className="text-muted-foreground leading-relaxed">
                           Innovative and results-driven software developer, dedicated to delivering high-quality technical
                           solutions and serving as a reliable point of reference for best practices in the tech industry.
@@ -78,7 +78,7 @@ export default function About() {
                     <div className="flex items-start gap-3">
                       <Target className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">Expertise & Focus</h3>
+                        <h3 className="text-xl font-serif font-semibold mb-2">Expertise & Focus</h3>
                         <p className="text-muted-foreground leading-relaxed">
                           I'm a passionate Software Engineer with expertise in the PERN stack (PostgreSQL, Express, React,
                           Node.js) and strong foundations in cloud technologies like AWS and Firebase. My background in IT support
@@ -97,7 +97,7 @@ export default function About() {
                     <div className="flex items-start gap-3">
                       <Heart className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h3 className="text-xl font-semibold mb-2">Passion & Purpose</h3>
+                        <h3 className="text-xl font-serif font-semibold mb-2">Passion & Purpose</h3>
                         <p className="text-muted-foreground leading-relaxed">
                           I'm particularly driven by health tech, support systems, and community-driven tools. My goal is to
                           leverage technology to solve real-world problems and improve people's lives, especially in my community
@@ -121,7 +121,7 @@ export default function About() {
           >
             <Card className="glass-effect border-none shadow-xl">
               <CardContent className="p-6 space-y-6">
-                <h3 className="text-xl font-semibold gradient-text">Quick Stats</h3>
+                <h3 className="text-xl font-serif font-semibold gradient-text">Quick Stats</h3>
                 
                 <div className="space-y-4">
                   <div className="text-center p-4 rounded-lg bg-primary/5 border border-primary/10">
@@ -144,7 +144,7 @@ export default function About() {
 
             <Card className="glass-effect border-none shadow-xl">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4 gradient-text">Core Values</h3>
+                <h3 className="text-xl font-serif font-semibold mb-4 gradient-text">Core Values</h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="px-3 py-1">Innovation</Badge>
                   <Badge variant="secondary" className="px-3 py-1">Quality</Badge>

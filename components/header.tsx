@@ -41,10 +41,10 @@ export default function Header() {
           transition={{ duration: 0.5 }}
         >
           <Link href="#home" className="group flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center shadow-lg">
+              <Sparkles className="w-4 h-4 text-foreground" />
             </div>
-            <span className="text-xl font-bold gradient-text">Victor Kamau</span>
+            <span className="text-xl font-serif font-bold gradient-text">Victor Kamau</span>
           </Link>
         </motion.div>
 
@@ -67,7 +67,7 @@ export default function Header() {
                 className="relative text-sm font-medium text-foreground hover:text-primary transition-colors group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-amber-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </motion.div>
           ))}
@@ -131,7 +131,7 @@ export default function Header() {
                     >
                       <span className="relative">
                         {link.name}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-amber-600 transition-all duration-300 group-hover:w-full"></span>
                       </span>
                     </Link>
                   </motion.div>
