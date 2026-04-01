@@ -76,8 +76,8 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
+          <h2 className="text-3xl font-serif font-bold mb-2">Get In Touch</h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-4 rounded-full"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Feel free to reach out if you have any questions, project ideas, or just want to connect!
           </p>
@@ -91,9 +91,9 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-1"
           >
-            <Card>
+            <Card className="glass-effect border border-border/50 shadow-lg">
               <CardContent className="p-6 space-y-6">
-                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                <h3 className="text-xl font-serif font-semibold mb-4 gradient-text">Contact Information</h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -127,8 +127,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t">
-                  <h4 className="text-sm font-medium mb-3">Connect with me</h4>
+                <div className="pt-4 border-t border-border/50">
+                  <h4 className="text-sm font-serif font-medium mb-3">Connect with me</h4>
                   <div className="flex gap-3">
                     <a
                       href="https://github.com/VicGriffin"
@@ -168,7 +168,7 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2"
           >
-            <Card>
+            <Card className="glass-effect border border-border/50 shadow-lg">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -15,8 +15,8 @@ export default function Footer() {
     <footer className="relative py-16 px-4 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/5 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -29,10 +29,10 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <Link href="#home" className="group inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center shadow-lg">
+                <Sparkles className="w-4 h-4 text-foreground" />
               </div>
-              <span className="text-xl font-bold gradient-text">Victor Kamau</span>
+              <span className="text-xl font-serif font-bold gradient-text">Victor Kamau</span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Passionate Software Engineer crafting exceptional digital experiences with modern web technologies. 
@@ -61,7 +61,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold mb-4 gradient-text">Quick Links</h3>
+            <h3 className="text-lg font-serif font-semibold mb-4 gradient-text">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { name: "Home", href: "#home" },
@@ -90,7 +90,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold mb-4 gradient-text">Connect With Me</h3>
+            <h3 className="text-lg font-serif font-semibold mb-4 gradient-text">Connect With Me</h3>
             <div className="flex flex-wrap gap-3 mb-6">
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Link
@@ -127,7 +127,7 @@ export default function Footer() {
             <div className="space-y-3">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white text-sm font-medium hover:shadow-lg transition-shadow"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-amber-600 text-foreground text-sm font-medium hover:shadow-lg transition-shadow"
               >
                 <Mail className="w-4 h-4" />
                 Get In Touch

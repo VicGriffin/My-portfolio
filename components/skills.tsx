@@ -70,8 +70,8 @@ export default function Skills() {
     <section id="skills" className="py-20 px-4 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-pink-500/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-primary/8 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-amber-600/8 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -93,10 +93,10 @@ export default function Skills() {
             <span className="text-primary font-medium">Technical Expertise</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             <span className="gradient-text">My Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Comprehensive skill set spanning frontend, backend, cloud technologies, and system administration
           </p>

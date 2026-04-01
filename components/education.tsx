@@ -34,8 +34,8 @@ export default function Education() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-2">Education & Certifications</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl font-serif font-bold mb-2">Education & Certifications</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
@@ -46,11 +46,11 @@ export default function Education() {
             transition={{ duration: 0.5 }}
             className="mb-12"
           >
-            <Card className="border-l-4 border-l-primary">
+            <Card className="border-l-4 border-l-primary glass-effect border-border/50 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 font-serif">
                       <GraduationCap className="h-5 w-5 text-primary" />
                       BSc in Computer Technology
                     </CardTitle>
@@ -78,16 +78,16 @@ export default function Education() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-serif font-semibold mb-6 flex items-center gap-2">
               <Award className="h-5 w-5 text-primary" />
               Certifications
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow">
+                <Card key={index} className="glass-effect border-border/50 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg">{cert.title}</CardTitle>
+                    <CardTitle className="text-lg font-serif">{cert.title}</CardTitle>
                     <CardDescription>{cert.issuer}</CardDescription>
                   </CardHeader>
                   <CardContent>
