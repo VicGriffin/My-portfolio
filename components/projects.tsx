@@ -15,7 +15,6 @@ import { ExternalLink, Github, Rocket, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import darubiniImg from "../src/darubini.jpg";
-import universeImg from "../src/universe.jpg";
 import mastoreImg from "../src/mastore-arise-and-shine-school.jpg";
 import tangoGardensImg from "../src/tango gardens.jpg";
 import urbanHavenImg from "../src/urban-haven-apartments.jpg";
@@ -34,16 +33,7 @@ export default function Projects() {
       githubLink: "#",
       featured: true,
     },
-    {
-      title: "Universe Social Media",
-      description:
-        "The ultimate social platform designed exclusively for university students to connect, explore, and thrive. Build networks, join communities, and discover opportunities.",
-      image: universeImg,
-      tags: ["React", "Node.js", "Socket.io", "MongoDB", "Social Platform"],
-      liveLink: "https://v0-university-frontend-development.vercel.app/",
-      githubLink: "#",
-      featured: true,
-    },
+
     {
       title: "Arise and Shine School Store",
       description:
@@ -83,9 +73,9 @@ export default function Projects() {
     {
       title: "VITA AI",
       description:
-        "Designed a functional AI concept platform demonstrating an emergency-focused virtual assistant, integrating innovation, accessibility, and real-world problem solving.",
+        "An AI concept platform demonstrating an emergency-focused virtual assistant, integrating innovation, accessibility, and real-world problem solving. Still under development.",
       image: vitaAiImg,
-      tags: ["React", "AI", "Virtual Assistant", "Next.js"],
+      tags: ["React", "AI", "Virtual Assistant", "Next.js", "In Development"],
       liveLink: "https://vita-ai-tau.vercel.app/",
       githubLink: "#",
     },
