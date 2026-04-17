@@ -30,10 +30,14 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    console.log("[v0] Form submitted with data:", formData)
 
     try {
+      console.log("[v0] Importing sendEmail function...")
       const { sendEmail } = await import("@/lib/email")
+      console.log("[v0] Calling sendEmail...")
       const result = await sendEmail(formData)
+      console.log("[v0] sendEmail result:", result)
 
       if (result.success) {
         toast({
