@@ -140,7 +140,7 @@ export default function Projects() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-20 w-80 h-80 bg-primary/8 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-amber-600/8 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-accent/8 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
