@@ -20,6 +20,9 @@ import tangoGardensImg from "../src/tango gardens.jpg";
 import urbanHavenImg from "../src/urban-haven-apartments.jpg";
 import vitaAiImg from "../src/vita-ai.jpg";
 import zaphToursImg from "../src/zaph-tours.jpg";
+import veloxImg from "../src/velox-web-systems.jpg";
+import ashakiImg from "../src/ashaki-gardens.jpg";
+import allThingsJessImg from "../src/allthingsjess-design.jpg";
 
 export default function Projects() {
   const projects = [
@@ -80,6 +83,34 @@ export default function Projects() {
       githubLink: "#",
     },
     {
+      title: "AllThingsJess Design",
+      description:
+        "A creative design portfolio and studio website showcasing branding, visual identity, and digital design services with a clean, professional aesthetic.",
+      image: allThingsJessImg,
+      tags: ["Design", "Portfolio", "Branding", "Creative"],
+      liveLink: "https://design.allthingsjess.com/",
+      githubLink: "#",
+    },
+    {
+      title: "Velox Web Systems",
+      description:
+        "An AI-powered website analysis platform that calculates Revenue Visibility Scores across 6 critical dimensions, identifying revenue-blocking issues and providing actionable insights with ROI estimates.",
+      image: veloxImg,
+      tags: ["AI", "Analytics", "SaaS", "Next.js", "Website Audit"],
+      liveLink: "https://velox-web-systems.vercel.app/",
+      githubLink: "#",
+      featured: true,
+    },
+    {
+      title: "Ashaki Gardens",
+      description:
+        "A premium restaurant and events venue website for Ruiru, Kenya, featuring fine dining, live Mugithi music nights, private events booking, and a stunning garden ambiance experience.",
+      image: ashakiImg,
+      tags: ["Hospitality", "Restaurant", "Events", "Next.js", "Kenya"],
+      liveLink: "https://ashaki-gardens.vercel.app/",
+      githubLink: "#",
+    },
+    {
       title: "Coming Soon",
       description: "An exciting new project in development. Stay tuned for updates!",
       image: null,
@@ -134,7 +165,7 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             <span className="gradient-text">My Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Here are some of the projects I've worked on. Each project represents a unique challenge and learning
             experience, focusing on real-world solutions.
@@ -152,7 +183,7 @@ export default function Projects() {
             <motion.div key={index} variants={item} className="group">
               <Card className={`h-full overflow-hidden transition-all duration-300 flex flex-col ${
                 project.title === "Coming Soon" 
-                  ? "bg-gradient-to-br from-primary/10 to-purple-500/10 border-primary/30 hover:from-primary/20 hover:to-purple-500/20" 
+                  ? "bg-gradient-to-br from-primary/10 to-accent/10 border-primary/30 hover:from-primary/20 hover:to-accent/20" 
                   : "glass-effect border-border/50 hover:shadow-2xl hover:-translate-y-2"
               } ${project.featured ? "ring-2 ring-primary/20" : ""}`}>
                 {project.image ? (
@@ -180,7 +211,7 @@ export default function Projects() {
                     )}
                   </div>
                 ) : project.title === "Coming Soon" ? (
-                  <div className="h-56 flex items-center justify-center bg-gradient-to-br from-primary/5 to-purple-500/5">
+                  <div className="h-56 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/5">
                     <div className="text-center">
                       <motion.div
                         animate={{ scale: [0.9, 1.1, 0.9] }}
@@ -271,10 +302,10 @@ export default function Projects() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { label: "Total Projects", value: "8+" },
-            { label: "Live Deployments", value: "7" },
-            { label: "Technologies", value: "15+" },
-            { label: "Industries", value: "6" }
+            { label: "Total Projects", value: "10+" },
+            { label: "Live Deployments", value: "10" },
+            { label: "Technologies", value: "18+" },
+            { label: "Industries", value: "8" }
           ].map((stat, index) => (
             <motion.div
               key={index}

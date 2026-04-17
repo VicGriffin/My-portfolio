@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 hero-gradient opacity-5 animate-gradient"></div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/15 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl animate-float" style={{ animationDelay: "6s" }}></div>
       </div>
 

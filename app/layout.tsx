@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
-import CursorEffect from "@/components/cursor-effect"
 
 const inter = Inter({ subsets: ["latin"] })
 const playfair = Playfair_Display({ 
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="bg-background text-foreground min-h-screen">
-            <CursorEffect />
             <Header />
             {children}
           </div>

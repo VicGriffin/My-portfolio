@@ -16,7 +16,7 @@ export default function Footer() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -29,7 +29,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <Link href="#home" className="group inline-flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-amber-600 flex items-center justify-center shadow-lg">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                 <Sparkles className="w-4 h-4 text-foreground" />
               </div>
               <span className="text-xl font-serif font-bold gradient-text">Victor Kamau</span>
@@ -127,7 +127,7 @@ export default function Footer() {
             <div className="space-y-3">
               <Link
                 href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-amber-600 text-foreground text-sm font-medium hover:shadow-lg transition-shadow"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium hover:shadow-lg transition-shadow"
               >
                 <Mail className="w-4 h-4" />
                 Get In Touch
