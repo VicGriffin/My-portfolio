@@ -17,7 +17,7 @@ export default function Experience() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-serif font-bold mb-2">Work Experience</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-8">

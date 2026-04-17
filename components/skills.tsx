@@ -71,7 +71,7 @@ export default function Skills() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary/8 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-amber-600/8 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 bg-accent/8 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -96,7 +96,7 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             <span className="gradient-text">My Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6"></div>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Comprehensive skill set spanning frontend, backend, cloud technologies, and system administration
           </p>
@@ -120,7 +120,7 @@ export default function Skills() {
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
-                    className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 text-primary mb-4 group-hover:shadow-lg transition-shadow"
+                    className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 text-primary mb-4 group-hover:shadow-lg transition-shadow"
                   >
                     {category.icon}
                   </motion.div>
@@ -162,7 +162,7 @@ export default function Skills() {
                           }}
                           className="h-full rounded-full relative overflow-hidden"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent"></div>
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-gradient"></div>
                         </motion.div>
                       </div>

@@ -11,7 +11,7 @@ export default function About() {
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-primary/8 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-amber-600/8 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-accent/8 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto">
@@ -36,7 +36,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             <span className="gradient-text">About Me</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-amber-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -129,13 +129,13 @@ export default function About() {
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
                   
-                  <div className="text-center p-4 rounded-lg bg-purple-500/5 border border-purple-500/10">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">50+</div>
+                  <div className="text-center p-4 rounded-lg bg-accent/5 border border-accent/10">
+                    <div className="text-3xl font-bold text-accent mb-1">50+</div>
                     <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </div>
                   
-                  <div className="text-center p-4 rounded-lg bg-pink-500/5 border border-pink-500/10">
-                    <div className="text-3xl font-bold text-pink-600 mb-1">100%</div>
+                  <div className="text-center p-4 rounded-lg bg-secondary/30 border border-secondary/50">
+                    <div className="text-3xl font-bold text-foreground mb-1">100%</div>
                     <div className="text-sm text-muted-foreground">Client Satisfaction</div>
                   </div>
                 </div>
