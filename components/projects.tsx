@@ -17,9 +17,7 @@ import Link from "next/link";
 import darubiniImg from "../src/darubini.jpg";
 import mastoreImg from "../src/mastore-arise-and-shine-school.jpg";
 import tangoGardensImg from "../src/tango gardens.jpg";
-import urbanHavenImg from "../src/urban-haven-apartments.jpg";
 import vitaAiImg from "../src/vita-ai.jpg";
-import zaphToursImg from "../src/zaph-tours.jpg";
 import veloxImg from "../src/velox-web-systems.jpg";
 import ashakiImg from "../src/ashaki-gardens.jpg";
 import allThingsJessImg from "../src/allthingsjess-design.jpg";
@@ -55,22 +53,31 @@ export default function Projects() {
       liveLink: "https://tango-garderns.vercel.app/",
       githubLink: "#",
     },
-        {
-      title: "Urban Haven Apartments",
+    {
+      title: "Interpreters Travel Site Optimization",
       description:
-        "Developed a modern real estate showcase website to highlight apartment features, amenities, and contact information — increasing inquiries from potential tenants.",
-      image: urbanHavenImg,
-      tags: ["React", "Real Estate", "Next.js", "Tailwind CSS"],
-      liveLink: "https://urban-haven-apartments-one.vercel.app/",
+        "Optimized this site with more than 20,000 users reducing the LCP and CLS by 80%. Implemented performance enhancements to deliver exceptional user experience at scale.",
+      image: null,
+      tags: ["React", "Next.js", "SCSS", "Performance Optimization", "Web Vitals"],
+      liveLink: "https://www.interpreters.travel/en",
       githubLink: "#",
     },
     {
-      title: "Zaph Tours",
+      title: "Fynova Company",
       description:
-        "Created a dynamic travel website to promote tour packages, showcase destinations, and simplify customer engagement and bookings.",
-      image: zaphToursImg,
-      tags: ["React", "Travel", "Next.js", "Tourism"],
-      liveLink: "https://zaph-tours-nine.vercel.app/",
+        "Corporate web platform highlighting financial products. Applied static generation for speed and SEO. Created a modern, professional website showcasing financial technology solutions and services.",
+      image: null,
+      tags: ["Static Generation", "SEO", "Financial Technology", "Corporate Website"],
+      liveLink: "https://fynova.vercel.app/",
+      githubLink: "#",
+    },
+    {
+      title: "LogOf Consult",
+      description:
+        "Developed LogOf Consult website for an accounting firm. Implemented Next.js for a high-performance, SEO-optimized web experience. Created a professional platform showcasing accounting and consulting services.",
+      image: null,
+      tags: ["Next.js", "SEO Optimization", "Professional Services", "Responsive Design"],
+      liveLink: "https://accounting-five-sable.vercel.app/",
       githubLink: "#",
     },
     {
