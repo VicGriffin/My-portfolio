@@ -118,6 +118,24 @@ export default function Projects() {
       githubLink: "#",
     },
     {
+      title: "AMTMTI - Medication Therapy Management Training",
+      description:
+        "A world-class home for medication therapy management training in Africa, delivering education and skills enhancement training, professional development courses, and certificates.",
+      image: null,
+      tags: ["Education", "Healthcare", "Training Platform", "Next.js", "Africa"],
+      liveLink: "https://amtmti-platform-build.vercel.app/",
+      githubLink: "#",
+    },
+    {
+      title: "Ready to Find Your Dream Home?",
+      description:
+        "Join thousands of satisfied users who found their perfect home through our platform. A comprehensive real estate portal connecting home seekers with their dream properties with ease and convenience.",
+      image: null,
+      tags: ["Real Estate", "Property Portal", "Next.js", "User Platform"],
+      liveLink: "https://tnc-alpha.vercel.app/",
+      githubLink: "#",
+    },
+    {
       title: "Coming Soon",
       description: "An exciting new project in development. Stay tuned for updates!",
       image: null,
