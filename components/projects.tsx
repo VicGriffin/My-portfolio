@@ -57,7 +57,7 @@ export default function Projects() {
       title: "Interpreters Travel Site Optimization",
       description:
         "Optimized this site with more than 20,000 users reducing the LCP and CLS by 80%. Implemented performance enhancements to deliver exceptional user experience at scale.",
-      image: null,
+      image: require("../public/interpreters-travel.png"),
       tags: ["React", "Next.js", "SCSS", "Performance Optimization", "Web Vitals"],
       liveLink: "https://www.interpreters.travel/en",
       githubLink: "#",
@@ -66,7 +66,7 @@ export default function Projects() {
       title: "Fynova Company",
       description:
         "Corporate web platform highlighting financial products. Applied static generation for speed and SEO. Created a modern, professional website showcasing financial technology solutions and services.",
-      image: null,
+      image: require("../public/fynova-company.png"),
       tags: ["Static Generation", "SEO", "Financial Technology", "Corporate Website"],
       liveLink: "https://fynova.vercel.app/",
       githubLink: "#",
@@ -75,7 +75,7 @@ export default function Projects() {
       title: "LogOf Consult",
       description:
         "Developed LogOf Consult website for an accounting firm. Implemented Next.js for a high-performance, SEO-optimized web experience. Created a professional platform showcasing accounting and consulting services.",
-      image: null,
+      image: require("../public/logof-consult.png"),
       tags: ["Next.js", "SEO Optimization", "Professional Services", "Responsive Design"],
       liveLink: "https://accounting-five-sable.vercel.app/",
       githubLink: "#",
@@ -121,7 +121,7 @@ export default function Projects() {
       title: "AMTMTI - Medication Therapy Management Training",
       description:
         "A world-class home for medication therapy management training in Africa, delivering education and skills enhancement training, professional development courses, and certificates.",
-      image: null,
+      image: require("../public/amtmti.png"),
       tags: ["Education", "Healthcare", "Training Platform", "Next.js", "Africa"],
       liveLink: "https://amtmti-platform-build.vercel.app/",
       githubLink: "#",
