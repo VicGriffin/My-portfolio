@@ -12,7 +12,6 @@ import Education from "@/components/education"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import InteractiveCanvas from "@/components/interactive-canvas"
-import CinematicLoader from "@/components/cinematic-loader"
 
 export default function Home() {
   useEffect(() => {
@@ -34,7 +33,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      <CinematicLoader />
       <InteractiveCanvas />
       <Hero />
       <About />
