@@ -39,11 +39,11 @@ export default function Education() {
             <span className="text-xs text-rose-400 font-mono tracking-widest uppercase font-semibold">Academic Nodes</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
             Education & Academy
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-rose-500 via-sky-500 to-amber-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Systematic foundational training and professional credentials acquired across computing infrastructures.
           </p>
         </div>
@@ -65,10 +65,10 @@ export default function Education() {
                     <GraduationCap size={20} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-serif font-bold text-white tracking-wide">
+                    <h3 className="text-xl font-serif font-bold text-foreground tracking-wide">
                       BSc in Computer Technology
                     </h3>
-                    <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 block mt-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-foreground/60 block mt-1">
                       Murang'a University of Technology
                     </span>
                   </div>
@@ -80,7 +80,7 @@ export default function Education() {
                 </div>
               </div>
 
-              <p className="text-xs text-neutral-400 leading-relaxed font-sans font-light">
+              <p className="text-xs text-foreground/70 leading-relaxed font-sans font-light">
                 Comprehensive education in distributed computing, enterprise programming paradigms, advanced networking protocols, and systems engineering methodologies. Earned practical training inside real-world environments while mastering robust analytical problem-solving keys.
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function Education() {
           >
             <div className="flex items-center gap-2 border-b border-white/5 pb-2">
               <Award className="h-5 w-5 text-rose-500" />
-              <h3 className="text-lg font-mono font-bold uppercase tracking-wider text-white">
+              <h3 className="text-lg font-mono font-bold uppercase tracking-wider text-foreground">
                 Credentials & Badges
               </h3>
             </div>

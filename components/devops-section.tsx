@@ -90,11 +90,11 @@ export default function DevopsSection() {
             <Cloud className="w-4 h-4 text-emerald-500" />
             <span className="text-xs text-emerald-400 font-mono tracking-widest uppercase font-semibold">Infrastructure & Operations</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-foreground">
             DevOps & Cloud Architecture
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Architecting secure containerized applications, scaling cloud native systems, and developing automated self-healing CI/CD networks.
           </p>
         </div>
@@ -114,14 +114,14 @@ export default function DevopsSection() {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Terminal className="w-5 h-5 text-emerald-400" />
-                  <span className="font-mono text-xs uppercase tracking-wider text-neutral-300">Continuous Deploy Core</span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">Continuous Deploy Core</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                   <span>Pipeline Active</span>
                 </div>
               </div>
-              <p className="text-xs text-neutral-400 mb-6 leading-relaxed">
+              <p className="text-xs text-foreground/70 mb-6 leading-relaxed">
                 Automated orchestration pipeline mapping code checkins directly to highly resilient Kubernetes environments.
               </p>
             </div>

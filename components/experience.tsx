@@ -46,11 +46,11 @@ export default function Experience() {
             <Star className="w-4 h-4 text-rose-500" />
             <span className="text-xs text-rose-400 font-mono tracking-widest uppercase font-semibold">Engineering Path</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
             Professional Timeline
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-rose-500 via-sky-500 to-amber-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Detailed chronology of milestones, team roles, and collaborative projects executed in tech environments.
           </p>
         </div>
@@ -80,10 +80,10 @@ export default function Experience() {
 
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4 pb-4 border-b border-white/5">
                   <div>
-                    <h3 className="text-xl font-serif font-bold text-white tracking-wide">
+                    <h3 className="text-xl font-serif font-bold text-foreground tracking-wide">
                       {exp.role}
                     </h3>
-                    <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 block mt-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-foreground/60 block mt-1">
                       {exp.company}
                     </span>
                   </div>

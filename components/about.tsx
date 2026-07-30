@@ -22,9 +22,9 @@ const engineer = {
 deploy(engineer).then(monitor_active_nodes);`
 
   return (
-    <section id="about" className="py-24 px-4 relative overflow-hidden">
-      {/* Subtle Grid backdrop */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#ffffff01_0%,transparent_50%)]" />
+    <section id="about" className="py-24 px-4 relative overflow-hidden bg-background">
+      {/* Subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/3 pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
@@ -37,89 +37,93 @@ deploy(engineer).then(monitor_active_nodes);`
             transition={{ duration: 0.6 }}
             className="lg:col-span-4 flex flex-col justify-between"
           >
-            <div className="glass-card rounded-2xl border border-white/5 p-6 flex flex-col items-center justify-center relative overflow-hidden group h-full">
-              {/* Corner brackets */}
-              <div className="absolute top-3 left-3 w-4 h-4 border-t border-l border-rose-500/40" />
-              <div className="absolute top-3 right-3 w-4 h-4 border-t border-r border-rose-500/40" />
-              <div className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-rose-500/40" />
-              <div className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-rose-500/40" />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-rose-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
-              {/* Meticulous Framed Image Container */}
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/10 group-hover:border-rose-500/30 transition-colors shadow-2xl bg-black">
-                {/* HUD Overlay / Scanning Line */}
-                <div className="absolute top-0 left-0 w-full h-[1.5px] bg-gradient-to-r from-transparent via-rose-500/60 to-transparent animate-pulse z-10" />
-                
+            <div className="glass-card rounded-lg border border-border p-6 flex flex-col items-center justify-center relative overflow-hidden group h-full">
+              {/* Clean framed image */}
+              <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden border border-border group-hover:border-primary/20 transition-colors shadow-sm bg-card">
                 <Image
                   src="/images/victor-profile.jpg"
                   alt="Victor Kamau"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="object-cover grayscale contrast-110 brightness-95 hover:grayscale-0 hover:brightness-100 transition-all duration-700 group-hover:scale-102"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                   priority
                 />
               </div>
-
-              {/* Status HUD telemetry beneath image */}
-              <div className="w-full mt-6 flex items-center justify-between font-mono text-[9px] text-neutral-500 border-t border-white/5 pt-4">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-neutral-400">NODE: ACTIVE_GRYPHON</span>
-                </div>
-                <span>LOC: NBO_01</span>
-              </div>
             </div>
           </motion.div>
           
-          {/* Column 2: Main Story & Highlight Cards */}
+          {/* Column 2: Crazy Designer Section */}
           <div className="lg:col-span-4 flex flex-col justify-between gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-5"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 font-mono text-[10px] uppercase font-semibold">
-                <span>01 // WHO_I_AM</span>
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 animate-pulse" />
+                <div className="relative px-6 py-4 bg-background dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 rounded-lg">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-pink-500/20 to-blue-500/20 border border-pink-400/50 text-pink-600 dark:text-pink-400 font-bold text-xs uppercase">
+                    <span className="animate-pulse">⚡</span>
+                    <span>About Me</span>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white tracking-tight leading-[1.1] text-balance">
-                Engineering elegant systems from the ground up.
-              </h2>
-              <p className="text-xs md:text-sm text-neutral-400 leading-relaxed font-sans tracking-wide font-light">
-                I am a meticulous Software Engineer based in Nairobi, Kenya. I specialize in assembling performant digital experiences using the PERN stack and NextJS, integrated with intelligent API routers and highly available cloud deployments.
-              </p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="space-y-3"
+              >
+                <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
+                  Building the Future
+                </h2>
+                <p className="text-lg font-bold text-foreground dark:text-white leading-relaxed drop-shadow-sm">
+                  Software engineer crafting blazing-fast digital experiences that push boundaries and inspire innovation.
+                </p>
+                <p className="text-base font-semibold text-foreground/85 dark:text-foreground/90 leading-relaxed drop-shadow-sm">
+                  Based in 🇰🇪 Nairobi, I specialize in full-stack development, cloud architecture, and AI integration. Every line of code is an opportunity to create excellence.
+                </p>
+              </motion.div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="space-y-4"
+              transition={{ delay: 0.2 }}
+              className="space-y-3"
             >
-              <div className="flex gap-3 p-4 rounded-xl bg-black/20 border border-white/5 hover:border-white/10 transition-colors">
-                <div className="mt-0.5 p-2 rounded-lg bg-neutral-900 border border-white/5 text-rose-500 flex-shrink-0">
-                  <Code size={14} />
-                </div>
-                <div>
-                  <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Technical Rigor</h4>
-                  <p className="text-[11px] text-neutral-400 mt-1 leading-relaxed">
-                    Prioritizing clean abstractions, complete type-safety, and modular architecture.
-                  </p>
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
+                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-emerald-400/30 hover:border-emerald-400/80 transition-all">
+                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-white flex-shrink-0 shadow-lg">
+                    <Code size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-foreground dark:text-white">Quality First</h4>
+                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
+                      Type-safe, performant, and beautiful code. No compromises.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-3 p-4 rounded-xl bg-black/20 border border-white/5 hover:border-white/10 transition-colors">
-                <div className="mt-0.5 p-2 rounded-lg bg-neutral-900 border border-white/5 text-rose-500 flex-shrink-0">
-                  <Cpu size={14} />
-                </div>
-                <div>
-                  <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider">Solutions Architect</h4>
-                  <p className="text-[11px] text-neutral-400 mt-1 leading-relaxed">
-                    Translating high-level system needs into reliable container topologies and databases.
-                  </p>
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-pink-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
+                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-orange-400/30 hover:border-orange-400/80 transition-all">
+                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 text-white flex-shrink-0 shadow-lg">
+                    <Cpu size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-foreground dark:text-white">Full-Stack Power</h4>
+                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
+                      From cloud infrastructure to pixel-perfect UX. Complete mastery.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -133,35 +137,33 @@ deploy(engineer).then(monitor_active_nodes);`
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-4"
           >
-            <div className="glass-card rounded-2xl border border-white/5 overflow-hidden shadow-2xl relative group h-full flex flex-col justify-between">
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
+            <div className="glass-card rounded-lg border border-border overflow-hidden shadow-sm relative group h-full flex flex-col justify-between">
               <div>
-                {/* Header tab decorations */}
-                <div className="bg-black/40 border-b border-white/5 px-4 py-3 flex items-center justify-between">
+                {/* Header */}
+                <div className="bg-secondary border-b border-border px-4 py-3 flex items-center justify-between">
                   <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/60" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/60" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/60" />
+                    <div className="w-2 h-2 rounded-full bg-primary/60" />
+                    <div className="w-2 h-2 rounded-full bg-primary/40" />
+                    <div className="w-2 h-2 rounded-full bg-primary/20" />
                   </div>
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono text-neutral-500">
-                    <Terminal size={10} />
-                    <span>identity_schema.ts</span>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Terminal size={12} />
+                    <span>skills.txt</span>
                   </div>
                 </div>
 
-                {/* Code print body */}
-                <div className="p-5 font-mono text-[11px] text-neutral-400 leading-relaxed bg-black/30 overflow-x-auto">
-                  <pre className="text-[10px] text-rose-400 select-all font-mono">
+                {/* Code body */}
+                <div className="p-4 font-mono text-xs text-muted-foreground leading-relaxed bg-card overflow-x-auto">
+                  <pre className="text-xs text-primary select-all font-mono">
                     <code>{codeSnippet}</code>
                   </pre>
                 </div>
               </div>
 
-              {/* Bottom footer bar info */}
-              <div className="bg-black/40 px-4 py-3 border-t border-white/5 flex items-center justify-between font-mono text-[9px] text-neutral-500 mt-auto">
-                <span>ENCODING: UTF-8</span>
-                <span>STATUS: COMPILED</span>
+              {/* Footer */}
+              <div className="bg-secondary px-4 py-3 border-t border-border flex items-center justify-between font-mono text-xs text-muted-foreground">
+                <span>UTF-8</span>
+                <span>Ready</span>
               </div>
             </div>
           </motion.div>
