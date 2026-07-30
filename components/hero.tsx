@@ -64,7 +64,7 @@ export default function Hero() {
             {/* Clean description */}
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+              className="text-base md:text-lg text-foreground/85 max-w-2xl leading-relaxed"
             >
               I build full-stack applications and cloud infrastructure with a focus on performance, reliability, and user experience. Based in Nairobi, Kenya.
             </motion.p>

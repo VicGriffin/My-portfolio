@@ -67,7 +67,7 @@ deploy(engineer).then(monitor_active_nodes);`
               <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-tight text-balance">
                 Crafting elegant digital experiences.
               </h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-foreground/80 leading-relaxed">
                 I&apos;m a software engineer based in Nairobi, Kenya, passionate about building performant, user-focused applications. I specialize in full-stack development with modern web technologies and cloud infrastructure.
               </p>
             </motion.div>

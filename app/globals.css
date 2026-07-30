@@ -4,33 +4,33 @@
 
 @layer base {
   :root, .dark {
-    --background: 0 0% 98%; /* Clean light background */
-    --foreground: 0 0% 12%; /* Deep charcoal text */
+    --background: 210 40% 96%; /* Soft blue-tinted background */
+    --foreground: 220 13% 15%; /* Very dark text */
     --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 220 13% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
-    --primary: 220 14% 45%; /* Professional slate blue */
+    --popover-foreground: 220 13% 15%;
+    --primary: 217 91% 60%; /* Vibrant professional blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 88%; /* Light gray */
-    --secondary-foreground: 0 0% 12%;
-    --muted: 0 0% 65%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 220 14% 45%; /* Consistent slate blue */
+    --secondary: 210 20% 88%; /* Subtle blue-gray */
+    --secondary-foreground: 220 13% 15%;
+    --muted: 220 13% 40%;
+    --muted-foreground: 220 13% 35%;
+    --accent: 217 91% 60%; /* Vibrant blue accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 92%;
-    --input: 0 0% 95%;
-    --ring: 220 14% 45%;
+    --border: 210 20% 88%;
+    --input: 210 15% 92%;
+    --ring: 217 91% 60%;
     --radius: 0.5rem;
-    --gradient-start: 220 14% 45%;
-    --gradient-end: 0 0% 75%;
-    --chart-1: 220 14% 45%;
-    --chart-2: 0 0% 70%;
-    --chart-3: 0 0% 55%;
-    --chart-4: 220 14% 35%;
-    --chart-5: 0 0% 85%;
+    --gradient-start: 217 91% 60%;
+    --gradient-end: 210 40% 85%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 210 20% 75%;
+    --chart-3: 220 13% 40%;
+    --chart-4: 217 91% 50%;
+    --chart-5: 210 20% 80%;
   }
 }
 
@@ -40,11 +40,18 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
-    background-color: #020205;
   }
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth bg-background;
     scroll-behavior: smooth;
+  }
+  
+  p, span, div, a, h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-foreground;
   }
 }
 
