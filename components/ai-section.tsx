@@ -200,11 +200,11 @@ export default function AiSection() {
             <Brain className="w-4 h-4 text-rose-500" />
             <span className="text-xs text-rose-400 font-mono tracking-widest uppercase">Intelligent Systems</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-foreground">
             AI Engineering
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-rose-500 via-sky-500 to-amber-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Designing cognitive computing solutions, autonomous agent logic, semantic search frameworks, and deep prompt engineering workflows.
           </p>
         </div>
@@ -224,13 +224,13 @@ export default function AiSection() {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Network className="w-5 h-5 text-rose-500" />
-                  <span className="font-mono text-xs uppercase tracking-wider text-neutral-300">Live Cognitive Network</span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">Live Cognitive Network</span>
                 </div>
                 <span className="text-[10px] font-mono text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 animate-pulse">
                   Ready
                 </span>
               </div>
-              <p className="text-xs text-neutral-400 mb-6 leading-relaxed">
+              <p className="text-xs text-foreground/70 mb-6 leading-relaxed">
                 Synaptic pulse paths modeling token progression across generative layers. Interactive firing mimics backpropagation tuning.
               </p>
             </div>
@@ -259,14 +259,14 @@ export default function AiSection() {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <Workflow className="w-5 h-5 text-sky-500" />
-                  <span className="font-mono text-xs uppercase tracking-wider text-neutral-300">Agent Cognitive Workflow</span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground/70">Agent Cognitive Workflow</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[10px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">
                   <Sparkles className="w-3 h-3 animate-spin" />
                   <span>Looping</span>
                 </div>
               </div>
-              <p className="text-xs text-neutral-400 mb-6 leading-relaxed">
+              <p className="text-xs text-foreground/70 mb-6 leading-relaxed">
                 A stateful multi-agent system executing parallel subtasks. Watch the loop transition through parsing, vector embedding lookup, reflection, and JSON schema formatting.
               </p>
             </div>

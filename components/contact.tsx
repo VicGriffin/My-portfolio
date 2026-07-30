@@ -169,11 +169,11 @@ export default function Contact() {
             <TermIcon className="w-4 h-4 text-amber-500" />
             <span className="text-xs text-amber-400 font-mono tracking-widest uppercase">Secure Terminal</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-foreground">
             Establish Connection
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-amber-500 via-rose-500 to-sky-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Initiate an encrypted transport loop directly to my inbox. Type custom parameters or execute preset handshake commands.
           </p>
         </div>
@@ -192,7 +192,7 @@ export default function Contact() {
               <Card className="glass-card rounded-2xl border border-white/5 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-mono font-bold tracking-wider text-white mb-4 uppercase border-b border-white/5 pb-2">
+                  <h3 className="text-lg font-mono font-bold tracking-wider text-foreground mb-4 uppercase border-b border-white/5 pb-2">
                     Core Directory
                   </h3>
                   

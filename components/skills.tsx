@@ -133,11 +133,11 @@ export default function Skills() {
             <span className="text-xs text-rose-400 font-mono tracking-widest uppercase font-semibold">Universe of Skills</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-foreground mb-4">
             Interactive Universe
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-rose-500 via-sky-500 to-amber-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
+          <p className="text-foreground/75 max-w-2xl mx-auto text-base">
             Click any orbiting node within the engineering universe to probe its telemetry stats, deployment metrics, and practical case facts.
           </p>
         </div>
