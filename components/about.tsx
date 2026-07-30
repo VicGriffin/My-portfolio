@@ -53,53 +53,77 @@ deploy(engineer).then(monitor_active_nodes);`
             </div>
           </motion.div>
           
-          {/* Column 2: Main Story & Highlight Cards */}
+          {/* Column 2: Crazy Designer Section */}
           <div className="lg:col-span-4 flex flex-col justify-between gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-5"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary border border-border text-primary font-semibold text-xs uppercase">
-                <span>About Me</span>
+              <div className="relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 animate-pulse" />
+                <div className="relative px-6 py-4 bg-background dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 rounded-lg">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-pink-500/20 to-blue-500/20 border border-pink-400/50 text-pink-600 dark:text-pink-400 font-bold text-xs uppercase">
+                    <span className="animate-pulse">⚡</span>
+                    <span>About Me</span>
+                  </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-tight text-balance">
-                Crafting elegant digital experiences.
-              </h2>
-              <p className="text-base text-foreground/80 leading-relaxed">
-                I&apos;m a software engineer based in Nairobi, Kenya, passionate about building performant, user-focused applications. I specialize in full-stack development with modern web technologies and cloud infrastructure.
-              </p>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="space-y-3"
+              >
+                <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
+                  Building the Future
+                </h2>
+                <p className="text-lg font-bold text-foreground dark:text-white leading-relaxed drop-shadow-sm">
+                  Software engineer crafting blazing-fast digital experiences that push boundaries and inspire innovation.
+                </p>
+                <p className="text-base font-semibold text-foreground/85 dark:text-foreground/90 leading-relaxed drop-shadow-sm">
+                  Based in 🇰🇪 Nairobi, I specialize in full-stack development, cloud architecture, and AI integration. Every line of code is an opportunity to create excellence.
+                </p>
+              </motion.div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="space-y-4"
+              transition={{ delay: 0.2 }}
+              className="space-y-3"
             >
-              <div className="flex gap-3 p-4 rounded-lg bg-secondary border border-border hover:border-primary/20 transition-colors">
-                <div className="mt-0.5 p-2 rounded-lg bg-card border border-border text-primary flex-shrink-0">
-                  <Code size={16} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-foreground">Quality First</h4>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                    Clean code, type safety, and thoughtful architecture.
-                  </p>
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
+                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-emerald-400/30 hover:border-emerald-400/80 transition-all">
+                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-white flex-shrink-0 shadow-lg">
+                    <Code size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-foreground dark:text-white">Quality First</h4>
+                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
+                      Type-safe, performant, and beautiful code. No compromises.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-3 p-4 rounded-lg bg-secondary border border-border hover:border-primary/20 transition-colors">
-                <div className="mt-0.5 p-2 rounded-lg bg-card border border-border text-primary flex-shrink-0">
-                  <Cpu size={16} />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-foreground">Full-Stack</h4>
-                  <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                    From cloud infrastructure to polished user interfaces.
-                  </p>
+              <div className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-pink-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
+                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-orange-400/30 hover:border-orange-400/80 transition-all">
+                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 text-white flex-shrink-0 shadow-lg">
+                    <Cpu size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-foreground dark:text-white">Full-Stack Power</h4>
+                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
+                      From cloud infrastructure to pixel-perfect UX. Complete mastery.
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
