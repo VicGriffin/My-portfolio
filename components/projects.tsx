@@ -15,7 +15,10 @@ import ashakiImg from "../src/ashaki-gardens.jpg"
 import allThingsJessImg from "../src/allthingsjess-design.jpg"
 import interpretersImg from "../public/interpreters-travel.png"
 import fynovaImg from "../public/fynova-company.png"
-import placeholderImg from "../public/placeholder.jpg"
+import hydraImg from "../public/hydra-water-solutions.png"
+import bkkraftImg from "../public/bkkraft.png"
+import dancoImg from "../public/danco.png"
+import fynovaShowcaseImg from "../public/fynova-showcase.png"
 
 interface Project {
   title: string
@@ -150,6 +153,70 @@ export default function Projects() {
       metrics: [
         { label: "Alloc. Speed", value: "<15ms" },
         { label: "Active Users", value: "Thousands" },
+      ],
+    },
+    {
+      title: "Hydra Water Solutions",
+      description:
+        "Water treatment and solutions provider website with service showcases, technical specifications, and enterprise-grade design for B2B clients.",
+      image: hydraImg,
+      tags: ["Water Tech", "B2B", "Next.js", "Enterprise", "Solutions"],
+      liveLink: "https://hydrawatersolutions.vercel.app/",
+      githubLink: "#",
+      featured: true,
+      archType: "B2B Platform Stack",
+      metrics: [
+        { label: "CLS Score", value: "0.0" },
+        { label: "Mobile", value: "100%" },
+        { label: "TTI", value: "0.85s" },
+      ],
+    },
+    {
+      title: "BK Kraft Kenya",
+      description:
+        "Premium e-commerce platform for eco-friendly kraft products, featuring dynamic inventory management, sustainable packaging showcase, and seamless checkout.",
+      image: bkkraftImg,
+      tags: ["E-Commerce", "Sustainability", "React", "Kenya", "Packaging"],
+      liveLink: "https://bkkraft.co.ke/",
+      githubLink: "#",
+      featured: true,
+      archType: "Commerce Engine",
+      metrics: [
+        { label: "Conv. Rate", value: "+24%" },
+        { label: "Load Time", value: "0.58s" },
+        { label: "Products", value: "500+" },
+      ],
+    },
+    {
+      title: "Danco Construction",
+      description:
+        "Professional construction company portfolio showcasing completed projects, service offerings, and technical expertise in civil engineering and infrastructure development.",
+      image: dancoImg,
+      tags: ["Construction", "Portfolio", "React", "Infrastructure", "Kenya"],
+      liveLink: "https://danco.co.ke/",
+      githubLink: "#",
+      featured: true,
+      archType: "Portfolio System",
+      metrics: [
+        { label: "Projects", value: "50+" },
+        { label: "SEO Rank", value: "Top 3" },
+        { label: "Load", value: "0.72s" },
+      ],
+    },
+    {
+      title: "Fynova Financial Platform",
+      description:
+        "Advanced financial technology platform delivering insights, analytics, and wealth management tools with real-time data feeds and institutional-grade security.",
+      image: fynovaShowcaseImg,
+      tags: ["FinTech", "Financial", "Analytics", "Dashboard", "Enterprise"],
+      liveLink: "https://fynova.vercel.app/",
+      githubLink: "#",
+      featured: true,
+      archType: "Financial Analytics Engine",
+      metrics: [
+        { label: "Data Points", value: "1000K+" },
+        { label: "Refresh Rate", value: "<5ms" },
+        { label: "Uptime", value: "99.99%" },
       ],
     },
   ]

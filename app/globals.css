@@ -4,33 +4,33 @@
 
 @layer base {
   :root, .dark {
-    --background: 240 15% 2%; /* Sleek ultra-dark luxury obsidian */
-    --foreground: 0 0% 98%; /* Brilliant white */
-    --card: 240 10% 4%; /* Translucent obsidian-slate */
+    --background: 0 0% 5%; /* Modern deep black */
+    --foreground: 0 0% 98%; /* Clean white */
+    --card: 0 0% 8%; /* Subtle dark gray */
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 4%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 346.8 77.2% 49.8%; /* Rich crimson/ruby red */
+    --primary: 200 100% 50%; /* Vibrant modern blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 199 89% 48%; /* Tech cerulean blue */
+    --secondary: 280 100% 50%; /* Modern purple accent */
     --secondary-foreground: 0 0% 100%;
-    --muted: 240 8% 10%;
-    --muted-foreground: 240 5% 65%;
-    --accent: 47.9 95.8% 53.1%; /* Metallic premium gold */
-    --accent-foreground: 240 10% 3.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 280 100% 50%; /* Modern purple */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 8% 12%;
-    --input: 240 8% 12%;
-    --ring: 346.8 77.2% 49.8%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 200 100% 50%;
     --radius: 1rem;
-    --gradient-start: 346.8 77.2% 49.8%;
-    --gradient-end: 199 89% 48%;
-    --chart-1: 346.8 77.2% 49.8%;
-    --chart-2: 199 89% 48%;
-    --chart-3: 47.9 95.8% 53.1%;
-    --chart-4: 217 51% 23%;
-    --chart-5: 104 60% 96%;
+    --gradient-start: 200 100% 50%;
+    --gradient-end: 280 100% 50%;
+    --chart-1: 200 100% 50%;
+    --chart-2: 280 100% 50%;
+    --chart-3: 0 100% 50%;
+    --chart-4: 40 100% 50%;
+    --chart-5: 120 100% 50%;
   }
 }
 
