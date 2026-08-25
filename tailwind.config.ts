@@ -20,6 +20,9 @@ const config = {
     },
     extend: {
       fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
+        display: ["var(--font-space)", "ui-sans-serif", "system-ui"],
+        mono: ["var(--font-plex)", "ui-monospace", "SFMono-Regular"],
         serif: ["var(--font-playfair)", "serif"],
       },
       colors: {

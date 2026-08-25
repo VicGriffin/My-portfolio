@@ -1,115 +1,67 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Menu, X, Terminal } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowUpRight, Menu, X } from "lucide-react"
 import Link from "next/link"
 import ThemeToggle from "./theme-toggle"
 
+const navLinks = [
+  { name: "Work", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" },
+]
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    const onScroll = () => setIsScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "AI Core", href: "#ai-architect" },
-    { name: "DevOps", href: "#devops" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
-  ]
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${
-        isScrolled
-          ? "bg-background/95 dark:bg-neutral-950/80 backdrop-blur-xl border-border dark:border-white/5 shadow-lg py-3"
-          : "bg-transparent border-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Link href="#home" className="group flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 dark:from-rose-600 dark:to-amber-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-              <Terminal className="w-4 h-4 text-black font-black" />
-            </div>
-            <span className="text-base font-serif font-bold tracking-tight text-foreground dark:text-white">
-              Victor Kamau
-            </span>
-          </Link>
-        </motion.div>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled ? "px-3 pt-3 sm:px-6" : "px-5 pt-5 sm:px-8"}`}>
+      <div className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border px-3 py-2.5 transition-all duration-300 sm:px-4 ${isScrolled ? "border-border/80 bg-background/85 shadow-xl shadow-black/5 backdrop-blur-xl dark:shadow-black/20" : "border-transparent bg-transparent"}`}>
+        <Link href="#home" onClick={closeMenu} className="group flex items-center gap-2.5 rounded-full px-2 py-1.5" aria-label="Victor Kamau home">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground font-display text-xs font-bold text-background transition-transform duration-300 group-hover:rotate-[-8deg]">VK</span>
+          <span className="font-display text-sm font-semibold tracking-tight">Victor Kamau</span>
+        </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, index) => (
-            <motion.div
-              key={link.name}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-            >
-              <Link
-                href={link.href}
-                className="text-xs font-mono tracking-wider uppercase text-muted-foreground dark:text-neutral-400 hover:text-foreground dark:hover:text-white transition-colors relative py-1.5 block group"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-gradient-to-r from-rose-500 to-amber-500 transition-all duration-300 group-hover:w-full" />
-              </Link>
-            </motion.div>
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
+          {navLinks.map((link) => (
+            <Link key={link.name} href={link.href} className="rounded-full px-3.5 py-2 font-mono text-[0.67rem] uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground">
+              {link.name}
+            </Link>
           ))}
-          <ThemeToggle />
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden gap-2">
+        <div className="flex items-center gap-1.5">
+          <Link href="#contact" className="hidden items-center gap-1.5 rounded-full bg-primary px-4 py-2.5 font-mono text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-primary-foreground transition hover:bg-primary/90 sm:flex">
+            Let&apos;s talk <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
           <ThemeToggle />
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-secondary dark:bg-white/5 text-foreground dark:text-white hover:bg-secondary/80 dark:hover:bg-white/10 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          <button type="button" onClick={() => setIsOpen((value) => !value)} className="rounded-full p-2.5 text-muted-foreground transition hover:bg-secondary hover:text-foreground md:hidden" aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={isOpen}>
+            {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden bg-background dark:bg-neutral-950 border-t border-border dark:border-white/5 overflow-hidden"
-          >
-            <nav className="px-6 py-6 flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-mono tracking-widest uppercase text-muted-foreground dark:text-neutral-400 hover:text-foreground dark:hover:text-white py-2 border-b border-border dark:border-white/5 last:border-none block"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
+        {isOpen && (
+          <motion.nav initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="mx-3 mt-2 rounded-3xl border border-border bg-card/95 p-3 shadow-2xl backdrop-blur-xl md:hidden" aria-label="Mobile navigation">
+            {navLinks.map((link) => (
+              <Link key={link.name} href={link.href} onClick={closeMenu} className="flex items-center justify-between rounded-2xl px-4 py-3.5 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground transition hover:bg-secondary hover:text-foreground">
+                {link.name} <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            ))}
+          </motion.nav>
         )}
       </AnimatePresence>
     </header>
