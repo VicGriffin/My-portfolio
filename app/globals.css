@@ -9,18 +9,18 @@
   --card-foreground: 222 32% 13%;
   --popover: 39 35% 99%;
   --popover-foreground: 222 32% 13%;
-  --primary: 12 79% 60%;
-  --primary-foreground: 38 33% 97%;
+  --primary: 79 61% 48%;
+  --primary-foreground: 222 32% 13%;
   --secondary: 38 24% 92%;
   --secondary-foreground: 222 32% 19%;
   --muted: 38 18% 91%;
   --muted-foreground: 219 14% 42%;
-  --accent: 164 51% 35%;
-  --accent-foreground: 38 33% 97%;
+  --accent: 17 87% 57%;
+  --accent-foreground: 222 32% 13%;
   --destructive: 0 72% 51%;
   --border: 36 19% 84%;
   --input: 36 19% 84%;
-  --ring: 12 79% 60%;
+  --ring: 79 61% 48%;
   --radius: 0.8rem;
 }
 
@@ -31,18 +31,18 @@
   --card-foreground: 38 27% 94%;
   --popover: 222 27% 11%;
   --popover-foreground: 38 27% 94%;
-  --primary: 12 85% 66%;
+  --primary: 79 62% 56%;
   --primary-foreground: 222 31% 8%;
   --secondary: 222 22% 16%;
   --secondary-foreground: 38 27% 94%;
   --muted: 222 21% 15%;
   --muted-foreground: 218 14% 66%;
-  --accent: 163 55% 48%;
+  --accent: 17 84% 60%;
   --accent-foreground: 222 31% 8%;
   --destructive: 0 62% 42%;
   --border: 220 17% 23%;
   --input: 220 17% 23%;
-  --ring: 12 85% 66%;
+  --ring: 79 62% 56%;
 }
 
 @layer base {
@@ -61,10 +61,26 @@
   .section-kicker::before { content: ""; @apply h-px w-8 bg-primary; }
   .eyebrow { @apply font-mono text-[0.67rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground; }
   .surface { @apply border border-border/80 bg-card/70 shadow-[0_18px_60px_-38px_rgba(20,26,38,0.45)] backdrop-blur-sm dark:shadow-[0_18px_60px_-38px_rgba(0,0,0,0.9)]; }
-  .surface-hover { @apply transition duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_22px_60px_-35px_rgba(217,88,65,0.42)]; }
+  .surface-hover { @apply transition duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_22px_60px_-35px_rgba(168,211,56,0.34)]; }
   .hairline-grid { background-image: linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px); background-size: 48px 48px; }
   .text-balance { text-wrap: balance; }
   .display-face { @apply font-display tracking-[-0.045em]; }
+  .hero-ghost { @apply pointer-events-none absolute -bottom-2 left-1/2 -z-10 -translate-x-1/2 font-display text-[clamp(6rem,24vw,20rem)] font-semibold uppercase leading-none tracking-[-0.09em] text-foreground/[.045]; }
+  .reference-band { @apply bg-foreground text-background; }
+  .marquee-strip { @apply overflow-hidden border-y border-border bg-primary py-3 text-primary-foreground; }
+  .marquee-track { @apply flex w-max items-center gap-8 whitespace-nowrap font-mono text-[0.65rem] font-semibold uppercase tracking-[0.2em]; animation: marquee 24s linear infinite; }
+  .magic-cursor { @apply pointer-events-none fixed left-0 top-0 z-[100] flex h-4 w-4 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary bg-primary/20 opacity-0 transition-[width,height,opacity,background-color,border-color] duration-200; }
+  .magic-cursor-visible { @apply opacity-100; }
+  .magic-cursor-labeled { @apply h-20 w-20 border-transparent bg-primary text-primary-foreground; }
+  .magic-cursor span { @apply font-mono text-[0.58rem] font-semibold uppercase tracking-[0.12em]; }
+  .preloader { @apply fixed inset-0 z-[110] flex flex-col justify-between bg-foreground px-6 py-6 text-background transition-transform duration-700 ease-in-out sm:px-10 sm:py-8; }
+  .preloader-leaving { @apply -translate-y-full; }
+  .preloader-topline { @apply flex items-center justify-between font-mono text-[0.63rem] uppercase tracking-[0.18em] text-background/60; }
+  .preloader-center { @apply flex flex-1 flex-col justify-center; }
+  .preloader-label { @apply mb-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary; }
+  .preloader-word { @apply font-display text-[clamp(4rem,14vw,12rem)] font-semibold leading-[.82] tracking-[-.07em]; }
+  .preloader-progress { @apply mt-10 h-px w-full max-w-sm overflow-hidden bg-background/20; }
+  .preloader-progress-bar { @apply block h-full origin-left bg-primary; animation: preloader-progress 1.45s cubic-bezier(.76,0,.24,1) both; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -72,8 +88,16 @@
   .float-slow { animation: float-slow 8s ease-in-out infinite; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation-play-state: paused; }
+  .magic-cursor { display: none; }
+}
+
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes float-slow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes preloader-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 ::-webkit-scrollbar { width: 9px; }
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
