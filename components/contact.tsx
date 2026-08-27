@@ -55,9 +55,13 @@ export default function Contact() {
     setIsSubmitting(true)
     setTerminalLines((lines) => [...lines, { id: Date.now(), text: `mail.send --from=${formData.email}`, type: "input" }, { id: Date.now() + 1, text: "Handshaking with delivery relay…", type: "system" }])
     try {
-      const { sendEmail } = await import("@/lib/email")
-      const result = await sendEmail(formData)
-      if (result.success) {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json() as { success?: boolean; error?: string }
+      if (response.ok && result.success) {
         setTerminalLines((lines) => [...lines, { id: Date.now(), text: "Message delivered to Victor's inbox.", type: "success" }])
         toast({ title: "Message sent", description: "Victor will review your note and get back to you." })
         setFormData({ name: "", email: "", subject: "", message: "" })
