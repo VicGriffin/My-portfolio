@@ -17,7 +17,7 @@ export default function AiSection() {
       <div className="section-wrap">
         <div className="grid gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-24">
           <div>
-            <p className="section-kicker">03 / Applied intelligence</p>
+            <p className="section-kicker">Applied intelligence</p>
             <h2 className="display-face max-w-md text-4xl font-semibold leading-[1.04] sm:text-5xl">AI belongs inside the product, not beside it.</h2>
             <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground">Victor explores AI-powered applications, LLM integrations, automation, voice systems, and intelligent workflows—always from the job the system needs to do.</p>
             <Link href="#contact" className="group mt-8 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition hover:text-primary">Discuss an AI build <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>

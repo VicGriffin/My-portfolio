@@ -24,7 +24,7 @@ export default function DevopsSection() {
       <div className="section-wrap">
         <div className="grid gap-12 lg:grid-cols-[1.12fr_.88fr] lg:gap-20">
           <div>
-            <p className="section-kicker">04 / Delivery systems</p>
+            <p className="section-kicker">Delivery systems</p>
             <h2 className="display-face max-w-xl text-4xl font-semibold leading-[1.04] sm:text-5xl">Good engineering includes the path to production.</h2>
             <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground">From deployment and cloud infrastructure to CI/CD, containers, monitoring, and production systems, the delivery layer makes product work sustainable.</p>
             <div className="mt-9 grid gap-3 sm:grid-cols-2">{signals.map(({ icon: Icon, label, text }) => <div key={label} className="flex items-center gap-3 rounded-2xl border border-border bg-card/60 p-4"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary"><Icon className="h-4 w-4" /></span><div><p className="font-display text-sm font-semibold">{label}</p><p className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.08em] text-muted-foreground">{text}</p></div></div>)}</div>

@@ -19,7 +19,7 @@ export default function Skills() {
       <div className="section-wrap">
         <div className="grid gap-10 lg:grid-cols-[.68fr_1.32fr] lg:gap-24">
           <div>
-            <p className="section-kicker">02 / Capability map</p>
+            <p className="section-kicker">Capability map</p>
             <h2 className="display-face max-w-sm text-4xl font-semibold leading-[1.04] sm:text-5xl">The stack is a means. The system is the work.</h2>
             <p className="mt-7 max-w-sm text-base leading-7 text-muted-foreground">A focused toolkit across product interfaces, application services, applied AI, and cloud delivery.</p>
             <Link href="#projects" className="group mt-8 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition hover:text-primary">See the stack in context <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>

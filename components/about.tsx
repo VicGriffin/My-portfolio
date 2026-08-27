@@ -16,7 +16,7 @@ export default function About() {
       <div className="section-wrap">
         <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr] lg:gap-24">
           <div>
-            <p className="section-kicker">01 / How I work</p>
+            <p className="section-kicker">How I work</p>
             <h2 className="display-face max-w-md text-4xl font-semibold leading-[1.04] sm:text-5xl">Engineering with context, not just code.</h2>
           </div>
           <div>
