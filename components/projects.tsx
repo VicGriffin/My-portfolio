@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowUpRight, ExternalLink, Grid2X2, Sparkles } from "lucide-react"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
+import type { StaticImageData } from "next/image"
 import Link from "next/link"
 
 import darubiniImg from "../src/darubini.jpg"
