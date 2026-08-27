@@ -22,6 +22,9 @@ export const sendEmail = async (formData: {
         email: formData.email,
         message: formData.message,
         subject: formData.subject,
+        to_email: 'vickamau20@gmail.com',
+        recipient_email: 'vickamau20@gmail.com',
+        reply_to: formData.email,
         time: new Date().toLocaleString()
       },
       publicKey
