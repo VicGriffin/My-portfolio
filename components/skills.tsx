@@ -163,8 +163,8 @@ export default function Skills() {
                   onClick={() => setSelectedTech(tech)}
                   className={`relative p-5 rounded-xl border cursor-pointer select-none transition-all duration-300 ${
                     isSelected
-                      ? "bg-neutral-900 border-rose-500/50 shadow-[0_0_20px_rgba(244,63,94,0.15)]"
-                      : "bg-black/40 border-white/5 hover:border-white/15"
+                      ? "bg-card border-primary/50 shadow-[0_0_20px_hsl(var(--primary)/0.15)]"
+                      : "bg-card/70 border-border hover:border-primary/30"
                   }`}
                   style={{
                     boxShadow: isSelected ? `0 0 25px ${tech.glowColor}` : "none",
@@ -181,7 +181,7 @@ export default function Skills() {
                     />
                   </div>
 
-                  <h3 className="text-sm font-mono tracking-wider font-bold text-white mb-1">
+                  <h3 className="text-sm font-mono tracking-wider font-bold text-foreground mb-1">
                     {tech.name}
                   </h3>
                   <span className="text-[10px] uppercase font-mono tracking-widest text-neutral-500 font-semibold block">
@@ -202,7 +202,7 @@ export default function Skills() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="glass-card rounded-2xl p-6 border border-white/5 relative overflow-hidden"
+                  className="glass-card rounded-xl p-6 border border-border relative overflow-hidden"
                 >
                   {/* Holographic scanner laser line visual overlay */}
                   <div className="absolute left-0 right-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-rose-500 to-transparent animate-pulse" />

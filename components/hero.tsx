@@ -58,7 +58,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight max-w-3xl text-balance"
             >
-              Elegant software solutions for modern challenges.
+              Software Engineer building systems that move ideas into reality.
             </motion.h1>
 
             {/* Clean description */}
@@ -66,7 +66,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-base md:text-lg text-foreground/85 max-w-2xl leading-relaxed"
             >
-              I build full-stack applications and cloud infrastructure with a focus on performance, reliability, and user experience. Based in Nairobi, Kenya.
+              I design and ship thoughtful software across frontend, backend, AI, automation, and cloud infrastructure. Based in Nairobi, Kenya.
             </motion.p>
 
             {/* Technology pills */}
@@ -75,10 +75,10 @@ export default function Hero() {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-2 max-w-xl"
             >
               {[
-                { text: "Full Stack" },
-                { text: "Next.js" },
-                { text: "React" },
-                { text: "Cloud" },
+                { text: "Frontend" },
+                { text: "Backend" },
+                { text: "AI + automation" },
+                { text: "Cloud systems" },
               ].map((pill, idx) => (
                 <div
                   key={idx}
@@ -122,6 +122,30 @@ export default function Hero() {
               <Link href="#contact" className="hover:text-primary transition-colors">
                 <Mail size={20} />
               </Link>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="w-full max-w-2xl pt-2">
+              <div className="mb-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                <span>System map</span>
+                <span>Currently building</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-5 sm:items-center">
+                {[
+                  ["User", "01"],
+                  ["Frontend", "02"],
+                  ["API", "03"],
+                  ["AI / Data", "04"],
+                  ["Infrastructure", "05"],
+                ].map(([label, number], index) => (
+                  <div key={label} className="relative flex items-center gap-2 sm:block">
+                    <div className="system-node w-full text-center">{label}<span className="ml-2 text-primary/70">{number}</span></div>
+                    {index < 4 && <span className="hidden sm:block absolute left-full top-1/2 h-px w-2 bg-primary/40" aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+                <span>Available for thoughtful work</span><span>Nairobi / EAT</span><span>Next.js · FastAPI · PostgreSQL</span>
+              </div>
             </motion.div>
           </div>
 

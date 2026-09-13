@@ -20,12 +20,10 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "AI Core", href: "#ai-architect" },
-    { name: "DevOps", href: "#devops" },
-    { name: "Projects", href: "#projects" },
+    { name: "Work", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Engineering", href: "#skills" },
+    { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ]
 
@@ -71,6 +69,9 @@ export default function Header() {
               </Link>
             </motion.div>
           ))}
+          <Link href="#contact" className="hidden lg:inline-flex items-center rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background transition-transform hover:-translate-y-0.5">
+            Let&apos;s build
+          </Link>
           <ThemeToggle />
         </nav>
 

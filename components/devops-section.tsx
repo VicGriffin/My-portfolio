@@ -90,8 +90,9 @@ export default function DevopsSection() {
             <Cloud className="w-4 h-4 text-emerald-500" />
             <span className="text-xs text-emerald-400 font-mono tracking-widest uppercase font-semibold">Infrastructure & Operations</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-foreground">
-            DevOps & Cloud Architecture
+          <span className="section-label">05 / Infrastructure</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-serif font-bold tracking-tight mb-4 text-foreground">
+            Systems that keep shipping.
           </h2>
           <div className="w-20 h-[2px] bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 mx-auto rounded-full mb-6" />
           <p className="text-foreground/75 max-w-2xl mx-auto text-base">
@@ -106,7 +107,7 @@ export default function DevopsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group"
+            className="lg:col-span-7 glass-card rounded-xl p-6 flex flex-col justify-between relative overflow-hidden group border border-border"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -200,7 +201,7 @@ export default function DevopsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-5 glass-card rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group"
+            className="lg:col-span-5 glass-card rounded-xl p-6 flex flex-col justify-between relative overflow-hidden group border border-border"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 

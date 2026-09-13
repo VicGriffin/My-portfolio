@@ -53,78 +53,42 @@ deploy(engineer).then(monitor_active_nodes);`
             </div>
           </motion.div>
           
-          {/* Column 2: Crazy Designer Section */}
-          <div className="lg:col-span-4 flex flex-col justify-between gap-6">
+          {/* Column 2: Engineering philosophy */}
+          <div className="lg:col-span-4 flex flex-col justify-between gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="space-y-5"
             >
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 animate-pulse" />
-                <div className="relative px-6 py-4 bg-background dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-800 rounded-lg">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-pink-500/20 to-blue-500/20 border border-pink-400/50 text-pink-600 dark:text-pink-400 font-bold text-xs uppercase">
-                    <span className="animate-pulse">⚡</span>
-                    <span>About Me</span>
-                  </div>
-                </div>
+              <span className="section-label">02 / Engineering philosophy</span>
+              <h2 className="font-serif text-4xl leading-[1.05] tracking-tight text-foreground md:text-5xl">
+                Understand the system. Then make it useful.
+              </h2>
+              <p className="text-base leading-7 text-muted-foreground">
+                I like the work between a vague problem and a dependable product: asking better questions, choosing simple primitives, and shipping software people can trust.
+              </p>
+              <div className="space-y-3 border-l border-primary/40 pl-4 text-sm leading-6 text-muted-foreground">
+                <p><strong className="text-foreground">Learn deliberately.</strong> Curiosity is part of the implementation.</p>
+                <p><strong className="text-foreground">Ship intentionally.</strong> Small, observable steps beat impressive complexity.</p>
+                <p><strong className="text-foreground">Keep improving.</strong> Good systems leave room for the next question.</p>
               </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="space-y-3"
-              >
-                <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-                  Building the Future
-                </h2>
-                <p className="text-lg font-bold text-foreground dark:text-white leading-relaxed drop-shadow-sm">
-                  Software engineer crafting blazing-fast digital experiences that push boundaries and inspire innovation.
-                </p>
-                <p className="text-base font-semibold text-foreground/85 dark:text-foreground/90 leading-relaxed drop-shadow-sm">
-                  Based in 🇰🇪 Nairobi, I specialize in full-stack development, cloud architecture, and AI integration. Every line of code is an opportunity to create excellence.
-                </p>
-              </motion.div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="space-y-3"
+              transition={{ delay: 0.15 }}
+              className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1"
             >
-              <div className="group relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
-                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-emerald-400/30 hover:border-emerald-400/80 transition-all">
-                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-white flex-shrink-0 shadow-lg">
-                    <Code size={18} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-black text-foreground dark:text-white">Quality First</h4>
-                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
-                      Type-safe, performant, and beautiful code. No compromises.
-                    </p>
-                  </div>
-                </div>
+              <div className="rounded-lg border border-border bg-card p-4">
+                <div className="mb-2 flex items-center gap-2 text-primary"><Code size={16} /><span className="text-xs font-mono uppercase tracking-wider">Craft</span></div>
+                <p className="text-sm text-muted-foreground">Readable interfaces, resilient APIs, and decisions that hold up over time.</p>
               </div>
-
-              <div className="group relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-pink-400 rounded-lg opacity-60 group-hover:opacity-100 blur transition duration-500" />
-                <div className="relative flex gap-3 p-4 rounded-lg bg-background dark:bg-slate-900 border border-orange-400/30 hover:border-orange-400/80 transition-all">
-                  <div className="mt-0.5 p-2.5 rounded-lg bg-gradient-to-br from-orange-500 to-pink-500 text-white flex-shrink-0 shadow-lg">
-                    <Cpu size={18} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-black text-foreground dark:text-white">Full-Stack Power</h4>
-                    <p className="text-xs text-foreground/60 dark:text-foreground/70 mt-1 leading-relaxed">
-                      From cloud infrastructure to pixel-perfect UX. Complete mastery.
-                    </p>
-                  </div>
-                </div>
+              <div className="rounded-lg border border-border bg-card p-4">
+                <div className="mb-2 flex items-center gap-2 text-primary"><Cpu size={16} /><span className="text-xs font-mono uppercase tracking-wider">Connect</span></div>
+                <p className="text-sm text-muted-foreground">Frontend, data, AI, and infrastructure treated as one connected product.</p>
               </div>
             </motion.div>
           </div>

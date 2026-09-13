@@ -245,12 +245,13 @@ export default function Projects() {
             <Sparkles className="w-4 h-4 text-sky-500" />
             <span className="text-xs text-sky-400 font-mono tracking-widest uppercase font-semibold">Exhibition Showcase</span>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight text-white mb-4">
-            Creative Exhibition
+          <span className="section-label">03 / Selected work</span>
+          <h2 className="mt-4 font-serif text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+            Systems made tangible.
           </h2>
-          <div className="w-20 h-[2px] bg-gradient-to-r from-sky-500 via-rose-500 to-amber-500 mx-auto rounded-full mb-6" />
-          <p className="text-neutral-400 max-w-2xl mx-auto text-base">
-            Explore a curated selection of architectural showcases, high performance static models, and AI systems built for scale.
+          <div className="editorial-rule mx-auto my-6 w-20 bg-primary" />
+          <p className="mx-auto max-w-2xl text-base text-muted-foreground">
+            A selection of products, platforms, and digital systems shaped around the people who use them.
           </p>
 
           {/* Filtering navigation toggles */}
@@ -265,8 +266,8 @@ export default function Projects() {
                 onClick={() => setSelectedCategory(cat.key as any)}
                 className={`px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all border ${
                   selectedCategory === cat.key
-                    ? "bg-white text-black border-white"
-                    : "bg-black/40 text-neutral-400 border-white/5 hover:text-white"
+                    ? "bg-foreground text-background border-foreground"
+                    : "bg-card text-muted-foreground border-border hover:text-foreground"
                 }`}
               >
                 {cat.label}
@@ -293,13 +294,13 @@ export default function Projects() {
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
                   {/* Outer Glass Container */}
-                  <div className="glass-card rounded-2xl w-full border border-white/5 overflow-hidden flex flex-col justify-between group transition-all duration-500 relative">
+                  <div className="glass-card rounded-xl w-full border border-border overflow-hidden flex flex-col justify-between group transition-all duration-500 relative">
                     {/* Metallic and color gradient volumetric reflection effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/5 via-transparent to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                     <div>
                       {/* Media container */}
-                      <div className="h-48 relative overflow-hidden bg-neutral-900 border-b border-white/5">
+                      <div className="h-52 relative overflow-hidden bg-muted border-b border-border">
                         {project.image ? (
                           <Image
                             src={project.image}
@@ -327,18 +328,18 @@ export default function Projects() {
                       {/* Content block */}
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-xl font-serif font-bold text-white tracking-wide">
+                          <h3 className="text-xl font-serif font-bold text-foreground tracking-wide">
                             {project.title}
                           </h3>
                         </div>
 
-                        <p className="text-xs text-neutral-400 leading-relaxed font-sans mb-6">
+                        <p className="text-sm text-muted-foreground leading-relaxed font-sans mb-6">
                           {project.description}
                         </p>
 
                         {/* Floating Metrics Showcase */}
                         {project.metrics && (
-                          <div className="grid grid-cols-3 gap-2 py-3 px-4 bg-black/40 rounded-xl border border-white/5 mb-6 font-mono text-[10px]">
+                          <div className="grid grid-cols-3 gap-2 py-3 px-4 bg-muted/50 rounded-lg border border-border mb-6 font-mono text-[10px]">
                             {project.metrics.map((m, mIdx) => (
                               <div key={mIdx}>
                                 <div className="text-neutral-500 text-[9px] uppercase tracking-wider">{m.label}</div>
