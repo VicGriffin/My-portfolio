@@ -1,35 +1,21 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { Sun, Moon } from "lucide-react"
-import { motion } from "framer-motion"
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  useEffect(() => setMounted(true), [])
 
-  if (!mounted) {
-    return <div className="w-10 h-10" />
-  }
+  if (!mounted) return <span className="h-9 w-9" aria-hidden="true" />
 
+  const isDark = theme === "dark"
   return (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-300 border border-primary/20 hover:border-primary/50 shadow-sm"
-      aria-label="Toggle theme"
-    >
-      {theme === "dark" ? (
-        <Sun className="w-5 h-5" />
-      ) : (
-        <Moon className="w-5 h-5" />
-      )}
-    </motion.button>
+    <button type="button" onClick={() => setTheme(isDark ? "light" : "dark")} className="flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-card/60 text-muted-foreground transition hover:border-primary/50 hover:text-foreground" aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
   )
 }

@@ -1,9 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Github, Sparkles, TrendingUp, Cpu, Server, Activity, ArrowUpRight, Grid, ListCollapse } from "lucide-react"
-import Image, { StaticImageData } from "next/image"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowUpRight, ExternalLink, Grid2X2, Sparkles } from "lucide-react"
+import Image from "next/image"
+import type { StaticImageData } from "next/image"
 import Link from "next/link"
 
 import darubiniImg from "../src/darubini.jpg"
@@ -20,390 +21,36 @@ import bkkraftImg from "../public/bkkraft.png"
 import dancoImg from "../public/danco.png"
 import fynovaShowcaseImg from "../public/fynova-showcase.png"
 
-interface Project {
-  title: string
-  description: string
-  image: StaticImageData | null
-  tags: string[]
-  liveLink: string | null
-  githubLink: string | null
-  featured?: boolean
-  metrics?: { label: string; value: string }[]
-  archType?: string
+interface Project { title: string; description: string; image: StaticImageData; tags: string[]; liveLink: string; featured?: boolean; buildAngle: string }
+
+const projects: Project[] = [
+  { title: "Velox Web Systems", description: "An AI-powered website analysis platform calculating Revenue Visibility Scores across six critical dimensions and identifying revenue blocks with ROI projections.", image: veloxImg, tags: ["AI", "Analytics", "SaaS", "Next.js"], liveLink: "https://velox-web-systems.vercel.app/", featured: true, buildAngle: "AI product / website analysis" },
+  { title: "Darubini ya Afya", description: "A digital health and wellness platform for community support in Kenya, improving public health access through robust record modules.", image: darubiniImg, tags: ["React", "Node.js", "MongoDB", "Health tech"], liveLink: "https://darubini-improved.vercel.app/", featured: true, buildAngle: "Digital health / community platform" },
+  { title: "Interpreters Travel Site", description: "Front-end performance work for a travel platform serving 20,000+ users, with a focus on improving LCP and CLS indicators.", image: interpretersImg, tags: ["React", "Next.js", "SCSS", "Web vitals"], liveLink: "https://www.interpreters.travel/en", featured: true, buildAngle: "Performance / travel product" },
+  { title: "Hydra Water Solutions", description: "A water treatment and solutions provider website with service showcases, technical specifications, and an enterprise-facing experience.", image: hydraImg, tags: ["B2B", "Next.js", "Enterprise"], liveLink: "https://hydrawatersolutions.vercel.app/", featured: true, buildAngle: "B2B / technical marketing" },
+  { title: "Arise and Shine School Store", description: "A streamlined e-commerce portal enabling school associations to distribute merchandise through a focused digital storefront.", image: mastoreImg, tags: ["React", "E-commerce", "Next.js"], liveLink: "https://mastore-arise-and-shine-school.vercel.app/", buildAngle: "Commerce / school community" },
+  { title: "Tango Gardens Portal", description: "A visual portfolio and corporate landing experience establishing digital brand presence for a landscaping and garden structures business.", image: tangoGardensImg, tags: ["React", "Next.js", "Business"], liveLink: "https://tango-garderns.vercel.app/", buildAngle: "Brand / business website" },
+  { title: "Fynova Company Portal", description: "A corporate fintech web system designed around performance and optimized organic query indexing.", image: fynovaImg, tags: ["Static generation", "SEO", "Fintech"], liveLink: "https://fynova.vercel.app/", buildAngle: "Fintech / corporate platform" },
+  { title: "VITA AI助理", description: "An AI-driven emergency response concept assistant validating virtual notification sequences under tight telemetry conditions.", image: vitaAiImg, tags: ["React", "AI", "Assistant"], liveLink: "https://vita-ai-tau.vercel.app/", buildAngle: "AI concept / emergency response" },
+  { title: "Ashaki Gardens Restaurant", description: "A visual booking portal for a luxury venue in Ruiru, Kenya, featuring table allocations and live music event calendars.", image: ashakiImg, tags: ["Hospitality", "Events", "Next.js"], liveLink: "https://ashaki-gardens.vercel.app/", buildAngle: "Hospitality / booking experience" },
+  { title: "BK Kraft Kenya", description: "An e-commerce platform for eco-friendly kraft products with inventory, packaging, and checkout experiences.", image: bkkraftImg, tags: ["E-commerce", "Sustainability", "React"], liveLink: "https://bkkraft.co.ke/", featured: true, buildAngle: "Commerce / sustainable products" },
+  { title: "Danco Construction", description: "A professional construction company portfolio showcasing projects, service offerings, and civil engineering expertise.", image: dancoImg, tags: ["Construction", "Portfolio", "Infrastructure"], liveLink: "https://danco.co.ke/", buildAngle: "Brand / infrastructure" },
+  { title: "Fynova Financial Platform", description: "A fintech platform concept for insights, analytics, and wealth management tools with real-time data feeds.", image: fynovaShowcaseImg, tags: ["Fintech", "Analytics", "Dashboard"], liveLink: "https://fynova.vercel.app/", buildAngle: "Financial analytics / dashboard" },
+  { title: "All Things Jess", description: "A visual design project for a focused personal brand and digital presence.", image: allThingsJessImg, tags: ["Design", "Brand", "Web"], liveLink: "#projects", buildAngle: "Brand / digital presence" },
+]
+
+function ProjectRow({ project, index }: { project: Project; index: number }) {
+  const external = project.liveLink !== "#projects"
+  return <Link href={project.liveLink} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} data-cursor="View" className="group grid gap-5 border-b border-border py-6 transition-colors hover:bg-secondary/35 sm:py-8 md:grid-cols-[72px_1fr_250px_28px] md:items-center md:gap-8 md:px-4">
+    <span className="font-display text-3xl font-medium tracking-[-.05em] text-muted-foreground/45 transition-colors group-hover:text-primary">{String(index + 1).padStart(2, "0")}</span>
+    <div className="min-w-0"><p className="eyebrow">{project.buildAngle}</p><h3 className="mt-2 font-display text-2xl font-medium tracking-[-.035em] transition-colors group-hover:text-primary sm:text-3xl">{project.title}</h3><p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground md:pr-8">{project.description}</p><div className="mt-4 flex flex-wrap gap-x-3 gap-y-1">{project.tags.map((tag) => <span key={tag} className="font-mono text-[0.59rem] uppercase tracking-[0.06em] text-muted-foreground/80">{tag}</span>)}</div></div>
+    <div className="relative aspect-[1.6] overflow-hidden rounded-2xl border border-border bg-foreground/5 md:aspect-[1.5] md:opacity-70 md:grayscale-[35%] md:transition-[opacity,filter,transform] md:group-hover:scale-[1.02] md:group-hover:opacity-100 md:group-hover:grayscale-0"><Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 250px" className="object-cover" /></div>
+    <span className="hidden justify-self-end text-primary md:block"><ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></span>
+  </Link>
 }
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState<"all" | "featured" | "optimized">("all")
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
-
-  const projects: Project[] = [
-    {
-      title: "Velox Web Systems",
-      description:
-        "An AI-powered website analysis platform calculating Revenue Visibility Scores across 6 critical dimensions, identifying revenue blocks with precise ROI projections.",
-      image: veloxImg,
-      tags: ["AI", "Analytics", "SaaS", "Next.js", "Website Audit"],
-      liveLink: "https://velox-web-systems.vercel.app/",
-      githubLink: "#",
-      featured: true,
-      archType: "Serverless Agent Engine",
-      metrics: [
-        { label: "AI Latency", value: "<120ms" },
-        { label: "SEO Rating", value: "100%" },
-        { label: "ROI Accuracy", value: "99.2%" },
-      ],
-    },
-    {
-      title: "Darubini ya Afya",
-      description:
-        "A comprehensive digital health and wellness platform for community support in Kenya, improving public health access through robust record modules.",
-      image: darubiniImg,
-      tags: ["React", "Node.js", "MongoDB", "Express", "Health Tech"],
-      liveLink: "https://darubini-improved.vercel.app/",
-      githubLink: "#",
-      featured: true,
-      archType: "PERN Microservices",
-      metrics: [
-        { label: "Data Pipeline", value: "Asynchronous" },
-        { label: "Security", value: "OIDC Standard" },
-        { label: "Uptime", value: "99.98%" },
-      ],
-    },
-    {
-      title: "Interpreters Travel Site",
-      description:
-        "Engineered major front-end performance optimizations for a scale site serving 20,000+ users, compressing LCP and CLS indicators by over 80%.",
-      image: interpretersImg,
-      tags: ["React", "Next.js", "SCSS", "Performance Optimization", "Web Vitals"],
-      liveLink: "https://www.interpreters.travel/en",
-      githubLink: "#",
-      featured: true,
-      archType: "Edge Optimized SPA",
-      metrics: [
-        { label: "LCP Red.", value: "-80%" },
-        { label: "Web Vitals", value: "Passed (A)" },
-        { label: "Load Time", value: "0.42s" },
-      ],
-    },
-    {
-      title: "Arise and Shine School Store",
-      description:
-        "Designed and completed a fast, streamlined e-commerce portal enabling school associations to distribute merchandise, increasing ancillary revenue streams.",
-      image: mastoreImg,
-      tags: ["React", "E-Commerce", "Next.js", "Tailwind CSS"],
-      liveLink: "https://mastore-arise-and-shine-school.vercel.app/",
-      githubLink: "#",
-      archType: "Serverless Jamstack",
-      metrics: [
-        { label: "Build Speed", value: "22s" },
-        { label: "Conversion Rate", value: "+18%" },
-      ],
-    },
-    {
-      title: "Tango Gardens Portal",
-      description:
-        "Designed an elegant visual portfolio and corporate landing experience establishing digital brand presence for landscaping/garden structures.",
-      image: tangoGardensImg,
-      tags: ["React", "Next.js", "Business Website", "Tailwind CSS"],
-      liveLink: "https://tango-garderns.vercel.app/",
-      githubLink: "#",
-      archType: "Static Generation (SSG)",
-      metrics: [
-        { label: "Lighthouse Performance", value: "100%" },
-        { label: "SEO Indexing", value: "100%" },
-      ],
-    },
-    {
-      title: "Fynova Company Portal",
-      description:
-        "A corporate financial technology web system designed around performance and optimized organic query indexing, built on high-fidelity Static Generation.",
-      image: fynovaImg,
-      tags: ["Static Generation", "SEO", "Financial Technology", "Corporate Website"],
-      liveLink: "https://fynova.vercel.app/",
-      githubLink: "#",
-      archType: "Distributed CDN Edge",
-      metrics: [
-        { label: "Page Weight", value: "85kb" },
-        { label: "FCP Index", value: "0.2s" },
-      ],
-    },
-    {
-      title: "VITA AI助理",
-      description:
-        "An AI-driven emergency response concept assistant validating virtual notification sequences under tight telemetry conditions.",
-      image: vitaAiImg,
-      tags: ["React", "AI", "Virtual Assistant", "Next.js"],
-      liveLink: "https://vita-ai-tau.vercel.app/",
-      githubLink: "#",
-      archType: "Cognitive API Loop",
-      metrics: [
-        { label: "Inference Delay", value: "<80ms" },
-        { label: "Token Ratio", value: "Optimal" },
-      ],
-    },
-    {
-      title: "Ashaki Gardens Restaurant",
-      description:
-        "Premium visual booking portal for a top-tier luxury venue in Ruiru, Kenya, featuring automated table allocations and live music event calendars.",
-      image: ashakiImg,
-      tags: ["Hospitality", "Restaurant", "Events", "Next.js", "Kenya"],
-      liveLink: "https://ashaki-gardens.vercel.app/",
-      githubLink: "#",
-      archType: "Serverless API Router",
-      metrics: [
-        { label: "Alloc. Speed", value: "<15ms" },
-        { label: "Active Users", value: "Thousands" },
-      ],
-    },
-    {
-      title: "Hydra Water Solutions",
-      description:
-        "Water treatment and solutions provider website with service showcases, technical specifications, and enterprise-grade design for B2B clients.",
-      image: hydraImg,
-      tags: ["Water Tech", "B2B", "Next.js", "Enterprise", "Solutions"],
-      liveLink: "https://hydrawatersolutions.vercel.app/",
-      githubLink: "#",
-      featured: true,
-      archType: "B2B Platform Stack",
-      metrics: [
-        { label: "CLS Score", value: "0.0" },
-        { label: "Mobile", value: "100%" },
-        { label: "TTI", value: "0.85s" },
-      ],
-    },
-    {
-      title: "BK Kraft Kenya",
-      description:
-        "Premium e-commerce platform for eco-friendly kraft products, featuring dynamic inventory management, sustainable packaging showcase, and seamless checkout.",
-      image: bkkraftImg,
-      tags: ["E-Commerce", "Sustainability", "React", "Kenya", "Packaging"],
-      liveLink: "https://bkkraft.co.ke/",
-      githubLink: "#",
-      featured: true,
-      archType: "Commerce Engine",
-      metrics: [
-        { label: "Conv. Rate", value: "+24%" },
-        { label: "Load Time", value: "0.58s" },
-        { label: "Products", value: "500+" },
-      ],
-    },
-    {
-      title: "Danco Construction",
-      description:
-        "Professional construction company portfolio showcasing completed projects, service offerings, and technical expertise in civil engineering and infrastructure development.",
-      image: dancoImg,
-      tags: ["Construction", "Portfolio", "React", "Infrastructure", "Kenya"],
-      liveLink: "https://danco.co.ke/",
-      githubLink: "#",
-      featured: true,
-      archType: "Portfolio System",
-      metrics: [
-        { label: "Projects", value: "50+" },
-        { label: "SEO Rank", value: "Top 3" },
-        { label: "Load", value: "0.72s" },
-      ],
-    },
-    {
-      title: "Fynova Financial Platform",
-      description:
-        "Advanced financial technology platform delivering insights, analytics, and wealth management tools with real-time data feeds and institutional-grade security.",
-      image: fynovaShowcaseImg,
-      tags: ["FinTech", "Financial", "Analytics", "Dashboard", "Enterprise"],
-      liveLink: "https://fynova.vercel.app/",
-      githubLink: "#",
-      featured: true,
-      archType: "Financial Analytics Engine",
-      metrics: [
-        { label: "Data Points", value: "1000K+" },
-        { label: "Refresh Rate", value: "<5ms" },
-        { label: "Uptime", value: "99.99%" },
-      ],
-    },
-  ]
-
-  const filteredProjects = projects.filter((p) => {
-    if (selectedCategory === "all") return true
-    if (selectedCategory === "featured") return p.featured
-    if (selectedCategory === "optimized") return p.tags.includes("Performance Optimization") || p.tags.includes("SEO")
-    return true
-  })
-
-  return (
-    <section id="projects" className="py-24 px-4 relative overflow-hidden">
-      {/* Dynamic Background Volumetric lighting */}
-      <div className="absolute top-1/4 left-10 w-[400px] h-[400px] rounded-full bg-rose-500/5 filter blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] rounded-full bg-sky-500/5 filter blur-[120px] pointer-events-none" />
-
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 mb-4"
-          >
-            <Sparkles className="w-4 h-4 text-sky-500" />
-            <span className="text-xs text-sky-400 font-mono tracking-widest uppercase font-semibold">Exhibition Showcase</span>
-          </motion.div>
-          <span className="section-label">03 / Selected work</span>
-          <h2 className="mt-4 font-serif text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            Systems made tangible.
-          </h2>
-          <div className="editorial-rule mx-auto my-6 w-20 bg-primary" />
-          <p className="mx-auto max-w-2xl text-base text-muted-foreground">
-            A selection of products, platforms, and digital systems shaped around the people who use them.
-          </p>
-
-          {/* Filtering navigation toggles */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {[
-              { key: "all", label: "All Works" },
-              { key: "featured", label: "Featured" },
-              { key: "optimized", label: "Performance Specs" },
-            ].map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setSelectedCategory(cat.key as any)}
-                className={`px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all border ${
-                  selectedCategory === cat.key
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-card text-muted-foreground border-border hover:text-foreground"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Project Bento Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => {
-              const isHovered = hoveredIdx === index
-              return (
-                <motion.div
-                  layout
-                  key={project.title}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative flex"
-                  onMouseEnter={() => setHoveredIdx(index)}
-                  onMouseLeave={() => setHoveredIdx(null)}
-                >
-                  {/* Outer Glass Container */}
-                  <div className="glass-card rounded-xl w-full border border-border overflow-hidden flex flex-col justify-between group transition-all duration-500 relative">
-                    {/* Metallic and color gradient volumetric reflection effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-rose-500/5 via-transparent to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-                    <div>
-                      {/* Media container */}
-                      <div className="h-52 relative overflow-hidden bg-muted border-b border-border">
-                        {project.image ? (
-                          <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            placeholder="blur"
-                            referrerPolicy="no-referrer"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-black/40 font-mono text-xs text-neutral-600">
-                            NO STATIC RENDER AVAILABLE
-                          </div>
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-
-                        {/* Technology tag on image */}
-                        <div className="absolute top-4 left-4">
-                          <span className="px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-[9px] font-mono uppercase tracking-wider text-neutral-300">
-                            {project.archType || "System Node"}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content block */}
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-xl font-serif font-bold text-foreground tracking-wide">
-                            {project.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-sm text-muted-foreground leading-relaxed font-sans mb-6">
-                          {project.description}
-                        </p>
-
-                        {/* Floating Metrics Showcase */}
-                        {project.metrics && (
-                          <div className="grid grid-cols-3 gap-2 py-3 px-4 bg-muted/50 rounded-lg border border-border mb-6 font-mono text-[10px]">
-                            {project.metrics.map((m, mIdx) => (
-                              <div key={mIdx}>
-                                <div className="text-neutral-500 text-[9px] uppercase tracking-wider">{m.label}</div>
-                                <div className="text-neutral-200 font-bold mt-0.5">{m.value}</div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Associated tag pills */}
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 py-0.5 rounded-md bg-white/5 border border-white/5 text-[9px] font-mono text-neutral-400 font-medium"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Footer Actions block */}
-                    <div className="p-6 pt-0 border-t border-white/5 mt-6 flex items-center justify-between">
-                      <div className="flex gap-4">
-                        {project.liveLink && (
-                          <Link
-                            href={project.liveLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-neutral-400 hover:text-white transition-colors text-[11px] font-mono tracking-wider uppercase flex items-center gap-1 group/btn"
-                          >
-                            <span>Live Payload</span>
-                            <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                          </Link>
-                        )}
-                        {project.githubLink && (
-                          <Link
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-neutral-500 hover:text-white transition-colors text-[11px] font-mono tracking-wider uppercase flex items-center gap-1"
-                          >
-                            <Github size={12} />
-                            <span>Repository</span>
-                          </Link>
-                        )}
-                      </div>
-
-                      {/* Performance rating badge indicator */}
-                      <div className="flex items-center gap-1">
-                        <Activity size={10} className="text-emerald-400 animate-pulse" />
-                        <span className="text-[9px] font-mono text-emerald-400 uppercase font-semibold">99% Quality</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </motion.div>
-              )
-            })}
-          </AnimatePresence>
-        </div>
-      </div>
-    </section>
-  )
+  const [filter, setFilter] = useState<"featured" | "all">("featured")
+  const visible = filter === "featured" ? projects.filter((project) => project.featured) : projects
+  return <section id="projects" className="section-space border-b border-border/70"><div className="section-wrap"><div className="relative flex flex-col justify-between gap-8 border-b border-border pb-10 sm:flex-row sm:items-end"><div><p className="section-kicker">Selected work</p><h2 className="display-face max-w-2xl text-4xl font-semibold leading-[.97] sm:text-6xl">Work that gives complex ideas a usable shape.</h2><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">A selection of products, platforms, and digital experiences across AI, health, travel, commerce, fintech, and infrastructure.</p></div><div className="flex shrink-0 gap-1 rounded-full border border-border bg-secondary/60 p-1"><button type="button" onClick={() => setFilter("featured")} className={`flex items-center gap-2 rounded-full px-3.5 py-2 font-mono text-[0.63rem] uppercase tracking-[0.12em] transition ${filter === "featured" ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"}`}><Sparkles className="h-3.5 w-3.5" /> Featured</button><button type="button" onClick={() => setFilter("all")} className={`flex items-center gap-2 rounded-full px-3.5 py-2 font-mono text-[0.63rem] uppercase tracking-[0.12em] transition ${filter === "all" ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"}`}><Grid2X2 className="h-3.5 w-3.5" /> All work</button></div></div><AnimatePresence mode="wait"><motion.div key={filter} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: .3 }} className="mt-2">{visible.map((project, index) => <ProjectRow key={project.title} project={project} index={index} />)}</motion.div></AnimatePresence><div className="mt-7 flex items-center justify-between"><span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-muted-foreground">Showing {visible.length} {filter === "featured" ? "featured" : "total"} projects</span><span className="inline-flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.15em] text-muted-foreground"><ExternalLink className="h-3.5 w-3.5 text-primary" /> Hover a row to preview</span></div></div></section>
 }
