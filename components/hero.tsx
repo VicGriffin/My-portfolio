@@ -20,10 +20,6 @@ export default function Hero() {
       <div className="section-wrap flex min-h-[760px] items-center pb-20 pt-36 sm:pb-28 sm:pt-44 lg:min-h-[820px]">
         <div className="grid w-full items-center gap-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}>
-              <div className="mb-7 flex items-center gap-3 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-primary"><span className="font-mono text-muted-foreground/60">01 /</span>
-                <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_0_5px_hsl(var(--accent)/.12)]" />
-              Available for thoughtful work
-            </div>
             <h1 className="display-face max-w-3xl text-5xl font-semibold leading-[0.98] sm:text-6xl lg:text-[5.5rem]">
               Software for the systems that move ideas forward.
             </h1>

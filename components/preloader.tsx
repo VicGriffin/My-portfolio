@@ -7,16 +7,23 @@ export default function Preloader() {
   const [isLeaving, setIsLeaving] = useState(false)
 
   useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = "manual"
+    window.scrollTo(0, 0)
+
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     const exitDelay = reducedMotion ? 220 : 1050
     const exitTimer = window.setTimeout(() => setIsLeaving(true), exitDelay)
     const removeTimer = window.setTimeout(() => setIsVisible(false), exitDelay + (reducedMotion ? 120 : 720))
+    const heroResetTimer = window.setTimeout(() => window.scrollTo(0, 0), exitDelay + 800)
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = "hidden"
 
     return () => {
       window.clearTimeout(exitTimer)
       window.clearTimeout(removeTimer)
+      window.clearTimeout(heroResetTimer)
+      window.history.scrollRestoration = previousScrollRestoration
       document.body.style.overflow = previousOverflow
     }
   }, [])
